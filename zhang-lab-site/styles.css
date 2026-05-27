@@ -237,3 +237,6 @@ a:hover { text-decoration: underline; }
 .card a:hover {
   text-decoration: underline;
 }
+body {
+  background-color: #5E2D82;
+}
