@@ -377,3 +377,31 @@ a:hover {
 .site-footer a {
   color: rgba(255,255,255,0.9);
 }
+/* ===== News Page White Content Area ===== */
+.news-page .stack {
+  background-color: white;
+  border-radius: 18px;
+  padding: 50px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+/* Dark text inside news section */
+.news-page h1,
+.news-page h2,
+.news-page p,
+.news-page li {
+  color: #222;
+}
+
+/* Purple year headings */
+.news-page .meta {
+  color: #5E2D82;
+  border-bottom: 2px solid #e5e5e5;
+}
+
+/* Smaller month headings */
+.news-page .month {
+  color: #666;
+}
