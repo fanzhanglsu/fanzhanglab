@@ -411,63 +411,85 @@ body {
   border-radius: 16px;
   margin: 25px 0;
 }
-/* ===== Join Page Cards ===== */
+/* ===== Transparent Hero Banner ===== */
+.join-hero {
+  height: 320px;
+  background-image: linear-gradient(
+      rgba(94, 45, 130, 0.45),
+      rgba(94, 45, 130, 0.45)
+    ),
+    url("images/ZF.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 18px;
+  margin-bottom: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Hero text */
+.join-overlay {
+  color: white;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.join-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.join-overlay p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.92);
+}
+
+/* ===== Side-by-side cards ===== */
+.join-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* ===== Card Styling ===== */
 .card {
-  background-color: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-left: 5px solid #5E2D82;
-  border-radius: 16px;
+  background: white;
+  border: 1px solid #e7e7e7;
+  border-radius: 18px;
   padding: 35px;
-  margin-bottom: 35px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.04);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.05);
 }
 
-/* Subtle hover effect */
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+/* Purple top accent */
+.card {
+  border-top: 5px solid #5E2D82;
 }
 
-/* Section titles */
+/* Card headings */
 .card h2 {
+  color: #5E2D82;
   margin-top: 0;
   margin-bottom: 18px;
-  color: #5E2D82;
-  font-size: 1.5rem;
-  font-weight: 700;
 }
 
-/* Lists */
-.card ul {
-  padding-left: 20px;
-  margin-top: 10px;
-  margin-bottom: 20px;
+/* Undergrad full width */
+.undergrad-card {
+  width: 100%;
 }
 
-.card li {
-  margin-bottom: 8px;
-  color: #333;
-}
+/* Mobile responsive */
+@media (max-width: 900px) {
+  .join-grid {
+    grid-template-columns: 1fr;
+  }
 
-/* Paragraph spacing */
-.card p {
-  margin-bottom: 16px;
-  color: #222;
+  .join-hero h1 {
+    font-size: 2.2rem;
+  }
 }
-
-/* Bold subsection labels */
-.card strong {
-  color: #111;
-}
-
-/* Link styling */
-.card a {
-  color: #5E2D82;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.card a:hover {
-  text-decoration: underline;
 }
