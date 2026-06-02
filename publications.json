@@ -1,0 +1,193 @@
+{
+"meta": {
+"last_updated": "2026-06-02"
+},
+"publications": [
+{
+"title": "Shifts in soil microbiome surrounding a thermal treatment facility for hazardous waste: the hidden impact of environmentally persistent free radicals",
+"authors": "F Zhang, ML Lard, L Khachatryan, C Guo, A Sandifer, NM Villafuerte",
+"journal": "Environmental Science: Processes & Impacts",
+"year": "2026",
+"volume": "28",
+"issue": "5",
+"pages": "1479-1490",
+"type": "article"
+},
+{
+"title": "Application of flow Vermimetry for quantification and analysis of the Caenorhabditis elegans gut microbiome",
+"authors": "F Zhang, D Blackburn, CN Hosea, A Assié, BS Samuel",
+"journal": "JoVE (Journal of Visualized Experiments)",
+"year": "2023",
+"pages": "e64605",
+"type": "article"
+},
+{
+"title": "Natural genetic variation drives microbiome selection in the Caenorhabditis elegans gut",
+"authors": "F Zhang, JL Weckhorst, A Assié, C Hosea, CA Ayoub, AS Khodakova",
+"journal": "Current Biology",
+"year": "2021",
+"volume": "31",
+"issue": "12",
+"pages": "2603-2618.e9",
+"type": "article"
+},
+{
+"title": "Opportunistic bacteria with reduced genomes are effective competitors for organic nitrogen compounds in coastal dinoflagellate blooms",
+"authors": "Y Han, N Jiao, Y Zhang, F Zhang, C He, X Liang, R Cai, Q Shi, K Tang",
+"journal": "Microbiome",
+"year": "2021",
+"volume": "9",
+"pages": "71",
+"type": "article"
+},
+{
+"title": "CeMbio - The Caenorhabditis elegans Microbiome Resource",
+"authors": "P Dirksen, A Assié, J Zimmermann, F Zhang, AM Tietje, SA Marsh",
+"journal": "G3: Genes, Genomes, Genetics",
+"year": "2020",
+"volume": "10",
+"issue": "9",
+"pages": "3025-3039",
+"type": "article"
+},
+{
+"title": "Complete genome sequence of Echinicola rosea JL3085, a xylan and pectin decomposer",
+"authors": "P Zhang, J Ye, X Lin, F Zhang, D Lin, Y Zhang, K Tang",
+"journal": "Marine Genomics",
+"year": "2020",
+"volume": "52",
+"pages": "100722",
+"type": "article"
+},
+{
+"title": "High-Throughput Assessment of Changes in the Caenorhabditis elegans Gut Microbiome",
+"authors": "F Zhang, JL Weckhorst, A Assié, AS Khodakova, M Loeza-Cabrera",
+"journal": "Aging: Methods and Protocols",
+"year": "2020",
+"pages": "131-144",
+"type": "book_chapter"
+},
+{
+"title": "Microbially mediated nutrient cycles in marine sponges",
+"authors": "F Zhang, L Jonas, H Lin, RT Hill",
+"journal": "FEMS Microbiology Ecology",
+"year": "2019",
+"volume": "95",
+"issue": "11",
+"pages": "fiz155",
+"type": "article"
+},
+{
+"title": "Caenorhabditis elegans as a Model for Microbiome Research",
+"authors": "F Zhang, M Berg, K Dierking, MA Félix, M Shapira, BS Samuel",
+"journal": "Frontiers in Microbiology",
+"year": "2017",
+"volume": "8",
+"pages": "485",
+"type": "review"
+},
+{
+"title": "Phosphorus sequestration in the form of polyphosphate by microbial symbionts in marine sponges",
+"authors": "F Zhang, LC Blasiak, JO Karolin, RJ Powell, CD Geddes, RT Hill",
+"journal": "Proceedings of the National Academy of Sciences",
+"year": "2015",
+"volume": "112",
+"issue": "14",
+"pages": "4381-4386",
+"type": "article"
+},
+{
+"title": "Nitrogenase diversity and activity in the gastrointestinal tract of the wood-eating catfish Panaque nigrolineatus",
+"authors": "R McDonald, F Zhang, JEM Watts, HJ Schreier",
+"journal": "The ISME Journal",
+"year": "2015",
+"volume": "9",
+"issue": "12",
+"pages": "2712-2724",
+"type": "article"
+},
+{
+"title": "Roles of the symbiotic microbial communities associated with sponge hosts in the nitrogen and phosphorus cycles",
+"authors": "F Zhang",
+"journal": "University of Maryland, College Park",
+"year": "2015",
+"type": "other"
+},
+{
+"title": "Symbiotic archaea in marine sponges show stability and host specificity in community structure and ammonia oxidation functionality",
+"authors": "F Zhang, L Pita, PM Erwin, S Abaid, S López-Legentil, RT Hill",
+"journal": "FEMS Microbiology Ecology",
+"year": "2014",
+"volume": "90",
+"issue": "3",
+"pages": "699-707",
+"type": "article"
+},
+{
+"title": "Temporal changes in the diazotrophic bacterial communities associated with Caribbean sponges Ircinia strobilina and Mycale laxissima",
+"authors": "F Zhang, J Vicente, RT Hill",
+"journal": "Frontiers in Microbiology",
+"year": "2014",
+"volume": "5",
+"pages": "561",
+"type": "article"
+},
+{
+"title": "High throughput screening of CO2-tolerating microalgae using GasPak bags",
+"authors": "Z Liu, F Zhang, F Chen",
+"journal": "Aquatic Biosystems",
+"year": "2013",
+"volume": "9",
+"issue": "1",
+"pages": "23",
+"type": "article"
+},
+{
+"title": "Diversity of Bacterial Communities Associated with the Indian Ocean Sponge Tsitsikamma favus That Contains the Bioactive Pyrroloiminoquinones",
+"authors": "TA Walmsley, GF Matcher, F Zhang, RT Hill, MT Davies-Coleman",
+"journal": "Marine Biotechnology",
+"year": "2012",
+"volume": "14",
+"issue": "6",
+"pages": "681-691",
+"type": "article"
+},
+{
+"title": "Host responses of a marine bacterium, Roseobacter denitrificans OCh114, to phage infection",
+"authors": "Y Zhang, F Zhang, J Yang, N Jiao",
+"journal": "Archives of Microbiology",
+"year": "2012",
+"volume": "194",
+"issue": "5",
+"pages": "323-330",
+"type": "article"
+},
+{
+"title": "Significant roles of bacteriochlorophyll a supplemental to chlorophyll a in the ocean",
+"authors": "N Jiao, F Zhang, N Hong",
+"journal": "The ISME Journal",
+"year": "2010",
+"volume": "4",
+"issue": "4",
+"pages": "595-597",
+"type": "article"
+},
+{
+"title": "Characterization of the Photosynthetic Apparatus and Proteome of Roseobacter denitrificans",
+"authors": "K Tang, R Zong, F Zhang, N Xiao, N Jiao",
+"journal": "Current Microbiology",
+"year": "2010",
+"volume": "60",
+"issue": "2",
+"pages": "124-133",
+"type": "article"
+},
+{
+"title": "Frontiers and technological advances in microbial processes and carbon cycling in the ocean",
+"authors": "NZ Jiao, CL Zhang, F Chen, J Kan, F Zhang",
+"journal": "Biological Oceanography Research Trends",
+"year": "2008",
+"type": "book_chapter"
+}
+]
+}
