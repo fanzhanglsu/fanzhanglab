@@ -6,3 +6,4 @@ if (toggle && nav) {
     nav.classList.toggle('open');
   });
 }
+fetch('publications.json')
