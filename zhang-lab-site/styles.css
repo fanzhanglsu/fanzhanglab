@@ -491,38 +491,46 @@ body {
   .join-hero h1 {
     font-size: 2.2rem;
   }
-}
-.people-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+.person-row {
+  display: flex;
+  align-items: flex-start;
   gap: 20px;
-  margin-top: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
 }
 
-.person-card {
-  border: 1px solid #eee;
-  border-radius: 12px;
-  padding: 15px;
-  text-align: center;
-  background: white;
-  transition: 0.2s ease;
-}
-
-.person-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
-
-.person-card img {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
+.person-row img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px; /* change to 50% if you want circle */
   object-fit: cover;
-  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.person-info {
+  flex: 1;
+}
+
+.person-info h3 {
+  margin: 0;
+  font-size: 20px;
 }
 
 .role {
-  font-weight: 500;
   color: #666;
-  margin: 5px 0;
+  margin: 5px 0 10px;
+}
+
+/* mobile responsiveness */
+@media (max-width: 600px) {
+  .person-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .person-row img {
+    width: 140px;
+    height: 140px;
+  }
 }
