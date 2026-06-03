@@ -491,46 +491,87 @@ body {
   .join-hero h1 {
     font-size: 2.2rem;
   }
+/* Section title */
+#people h2 {
+  color: #5b2c83;   /* LSU-style purple */
+  margin-bottom: 30px;
+}
+
+/* Person box */
 .person-row {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
+  gap: 24px;
+
+  padding: 24px;
+  margin-bottom: 24px;
+
+  border: 2px solid #e5e0ec;
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  transition: all 0.2s ease;
 }
 
+/* Optional hover effect */
+.person-row:hover {
+  border-color: #5b2c83;
+  box-shadow: 0 4px 12px rgba(91, 44, 131, 0.12);
+}
+
+/* Image */
 .person-row img {
-  width: 120px;
-  height: 120px;
-  border-radius: 8px; /* change to 50% if you want circle */
+  width: 140px;
+  height: 140px;
   object-fit: cover;
+
+  border-radius: 10px;
+
   flex-shrink: 0;
+
+  border: 2px solid #e5e0ec;
 }
 
+/* Text area */
 .person-info {
   flex: 1;
 }
 
+/* Name */
 .person-info h3 {
-  margin: 0;
-  font-size: 20px;
+  margin: 0 0 6px;
+  color: #5b2c83;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
+/* Role */
 .role {
-  color: #666;
-  margin: 5px 0 10px;
+  color: #7a5b94;
+  font-weight: 600;
+  margin-bottom: 12px;
 }
 
-/* mobile responsiveness */
-@media (max-width: 600px) {
+/* Links */
+.person-info a {
+  color: #5b2c83;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.person-info a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
   .person-row {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
   }
 
   .person-row img {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
   }
 }
