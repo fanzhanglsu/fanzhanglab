@@ -575,22 +575,3 @@ body {
     height: 120px;
   }
 }
-header {
-    background: white;
-    border-bottom: 1px solid var(--border);
-    padding: 30px 0 18px;
-    margin-bottom: 20px;
-}
-
-.header-content h1 {
-    font-size: 2rem;
-    color: var(--primary);
-    font-weight: 650;
-    margin-bottom: 4px;
-}
-
-.header-content p {
-    color: var(--muted);
-    font-size: 0.95rem;
-    max-width: 650px;
-}
