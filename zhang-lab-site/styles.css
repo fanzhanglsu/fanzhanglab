@@ -623,8 +623,8 @@ body {
 }
 
 .person-image img {
-    width: 150px; /* change size here */
-    height: 190px;
+    width: 15px; /* change size here */
+    height: 19px;
     object-fit: cover;
 
     border-radius: 12px;
