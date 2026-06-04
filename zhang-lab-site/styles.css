@@ -496,150 +496,28 @@ body {
   color: #5b2c83;   /* LSU-style purple */
   margin-bottom: 30px;
 }
-
-/* Person box */
-.person-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
-
-  padding: 24px;
-  margin-bottom: 24px;
-
-  border: 2px solid #e5e0ec;
-  border-radius: 12px;
-
-  background: #ffffff;
-
-  transition: all 0.2s ease;
-}
-
-/* Optional hover effect */
-.person-row:hover {
-  border-color: #5b2c83;
-  box-shadow: 0 4px 12px rgba(91, 44, 131, 0.12);
-}
-
-/* Image */
-.person-row img {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-
-  border-radius: 10px;
-
-  flex-shrink: 0;
-
-  border: 2px solid #e5e0ec;
-}
-
-/* Text area */
-.person-info {
-  flex: 1;
-}
-
-/* Name */
-.person-info h3 {
-  margin: 0 0 6px;
-  color: #5b2c83;
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-/* Role */
-.role {
-  color: #7a5b94;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-/* Links */
-.person-info a {
-  color: #5b2c83;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.person-info a:hover {
-  text-decoration: underline;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .person-row {
-    flex-direction: column;
-  }
-
-  .person-row img {
-    width: 120px;
-    height: 120px;
-  }
-}
-
+  
 .person-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-
-    background: #ffffff;
-    border: 1px solid #dbe3ec;
-    border-radius: 16px;
-
-    padding: 35px;
-    margin-bottom: 30px;
-
-    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    margin: 40px 0;
 }
 
 .person-info {
     flex: 1;
-}
-
-.person-info h1 {
-    margin: 0 0 8px;
-    font-size: 2rem;
-    color: #102542;
-}
-
-.role {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #4a6fa5;
-    margin-bottom: 18px;
-}
-
-.person-info p {
-    line-height: 1.8;
-    color: #444;
-    margin-bottom: 20px;
-}
-
-.person-info a {
-    display: inline-block;
-    text-decoration: none;
-    color: #2952A3;
-    font-weight: 600;
+    background: #fff;
+    border: 1px solid #dbe3ec;
+    border-radius: 14px;
+    padding: 30px;
 }
 
 .person-image img {
-    width: 15px; /* change size here */
-    height: 19px;
+    width: 240px;
+    height: auto;
+    border-radius: 14px;
+    border: 2px solid #dbe3ec;
     object-fit: cover;
-
-    border-radius: 12px;
-    border: 2px solid #e2e8f0;
 }
 
-/* Mobile responsive */
-@media (max-width: 900px) {
-    .person-card {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    .person-image img {
-        width: 220px;
-        height: 280px;
-    }
-}
