@@ -491,13 +491,3 @@ body {
   .join-hero h1 {
     font-size: 2.2rem;
   }
-/* Profile Names */
-.profile-bio h2 {
-    color: #461D7C; /* LSU Purple */
-    margin-top: 0;
-}
-
-/* Job Titles */
-.profile-bio p strong {
-    color: #461D7C; /* LSU Purple */
-}
