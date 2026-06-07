@@ -491,33 +491,3 @@ body {
   .join-hero h1 {
     font-size: 2.2rem;
   }
-/* Section title */
-#people h2 {
-  color: #5b2c83;   /* LSU-style purple */
-  margin-bottom: 30px;
-}
-  
-.person-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    margin: 40px 0;
-}
-
-.person-info {
-    flex: 1;
-    background: #fff;
-    border: 1px solid #dbe3ec;
-    border-radius: 14px;
-    padding: 30px;
-}
-
-.person-image img {
-    width: 240px;
-    height: auto;
-    border-radius: 14px;
-    border: 2px solid #dbe3ec;
-    object-fit: cover;
-}
-
