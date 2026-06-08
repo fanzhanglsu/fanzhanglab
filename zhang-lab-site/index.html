@@ -148,26 +148,50 @@ body {
 }
 
 /* =====================
-   CARDS
+   CARD GRID
 ===================== */
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  gap: 28px;
 }
 
+/* remove ugly link styling */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* cards */
 .card {
   background: white;
-  border-radius: 14px;
-  padding: 25px;
+  border-radius: 18px;
+  padding: 30px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  border: 1px solid rgba(90, 63, 192, 0.1);
+  border: 1px solid rgba(90, 63, 192, 0.10);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* HOVER ANIMATION */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  border-color: rgba(90, 63, 192, 0.25);
 }
 
 .card h3 {
   color: #4B2E83;
+  font-size: 22px;
+  margin-bottom: 12px;
 }
 
+.card p {
+  color: #555;
+  line-height: 1.6;
+}
 /* =====================
    NEWS
 ===================== */
