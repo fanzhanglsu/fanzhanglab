@@ -52,8 +52,8 @@ body {
   justify-content: center;
   text-align: center;
   position: relative;
-  color: white;
   overflow: hidden;
+  color: white;
 }
 
 /* background image */
@@ -77,28 +77,29 @@ body {
   );
 }
 
-/* content container */
+/* content box */
 .hero-content {
   position: relative;
-  max-width: 800px;
+  max-width: 850px;
   padding: 30px;
 }
 
-/* TITLE — WHITE ZHANG LAB */
+/* TITLE */
 .hero h1 {
   font-size: 64px;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+  margin-bottom: 12px;
   color: #ffffff;
   font-weight: 600;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+  letter-spacing: 1px;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
 }
 
-/* subtitle */
+/* SUBTITLE (your sentence) */
 .hero-subtitle {
   font-size: 18px;
-  color: #ffffff !important;
-  opacity: 1 !important;
+  color: #ffffff;
+  line-height: 1.5;
+  margin-bottom: 25px;
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.35);
 }
 
@@ -106,7 +107,7 @@ body {
    BUTTONS
 ===================== */
 .btn-group {
-  margin-top: 25px;
+  margin-top: 10px;
 }
 
 .btn {
@@ -116,7 +117,6 @@ body {
   border-radius: 30px;
   text-decoration: none;
   font-weight: 500;
-  transition: 0.3s;
 }
 
 .btn-primary {
@@ -160,12 +160,6 @@ body {
   padding: 25px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   border: 1px solid rgba(90, 63, 192, 0.1);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(90, 63, 192, 0.2);
 }
 
 .card h3 {
@@ -224,8 +218,9 @@ footer {
   <div class="hero-content">
     <h1>Zhang Lab</h1>
 
-    <p>
-      <h2>Decoding how microbiomes regulate host physiology, aging, and resilience.</h2>
+    <p class="hero-subtitle">
+      decoding how microbiomes regulate host physiology, aging, and resilience.
+    </p>
 
     <div class="btn-group">
       <a href="#research" class="btn btn-primary">Research</a>
@@ -263,7 +258,7 @@ footer {
     <h2 style="color:#4B2E83;">Latest News</h2>
 
     <div class="news-item">
-      🧬 New C. elegans developmental biology paper published
+      🧬 New C. elegans development paper published
     </div>
 
     <div class="news-item">
@@ -271,7 +266,7 @@ footer {
     </div>
 
     <div class="news-item">
-      🔬 New microscopy setup installed in the lab
+      🔬 New microscopy system installed in the lab
     </div>
 
   </div>
