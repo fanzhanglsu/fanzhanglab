@@ -158,10 +158,22 @@ body {
 }
 
 /* clickable card wrapper */
-.card-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
+/* REMOVE ALL LINK UNDERLINES */
+.card-link,
+.card-link:link,
+.card-link:visited,
+.card-link:hover,
+.card-link:active,
+.card-link:focus {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex;
+}
+
+/* make sure card text never underlines */
+.card-link h3,
+.card-link p {
+  text-decoration: none !important;
 }
 
 /* cards — equal height */
