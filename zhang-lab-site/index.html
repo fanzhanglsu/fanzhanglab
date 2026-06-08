@@ -154,32 +154,38 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
+  align-items: stretch;
 }
 
-/* clickable cards with NO underline */
-.card-link,
-.card-link:hover,
-.card-link:focus,
-.card-link:active,
-.card-link:visited {
-  text-decoration: none !important;
+/* clickable card wrapper */
+.card-link {
+  text-decoration: none;
   color: inherit;
+  display: flex;
 }
 
-/* cards */
+/* cards — equal height */
 .card {
   background: white;
   border-radius: 18px;
   padding: 30px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   border: 1px solid rgba(90, 63, 192, 0.10);
+
+  width: 100%;
+  min-height: 240px; /* SAME HEIGHT */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
     border-color 0.3s ease;
 }
 
-/* HOVER ANIMATION */
+/* hover animation */
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 18px 40px rgba(0,0,0,0.12);
