@@ -24,7 +24,7 @@
   </header>
 
   <main>
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -56,6 +56,7 @@ body {
   overflow: hidden;
 }
 
+/* YOUR BACKGROUND IMAGE HERE */
 .hero::before {
   content: "";
   position: absolute;
@@ -65,6 +66,7 @@ body {
   transform: scale(1.05);
 }
 
+/* purple overlay (gives Barrett-style aesthetic) */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -92,7 +94,9 @@ body {
   opacity: 0.95;
 }
 
-/* Buttons */
+/* =====================
+   BUTTONS
+===================== */
 .btn-group {
   margin-top: 25px;
 }
@@ -127,14 +131,14 @@ body {
 }
 
 /* =====================
-   SECTION WRAPPER
+   SECTIONS
 ===================== */
 .section {
   padding: 80px 10%;
 }
 
 /* =====================
-   FEATURE CARDS
+   CARDS
 ===================== */
 .cards {
   display: grid;
@@ -158,11 +162,10 @@ body {
 
 .card h3 {
   color: #4B2E83;
-  margin-bottom: 10px;
 }
 
 /* =====================
-   NEWS SECTION
+   NEWS
 ===================== */
 .news {
   background: #f7f5ff;
@@ -187,7 +190,6 @@ footer {
   padding: 40px;
   background: #4B2E83;
   color: white;
-  margin-top: 60px;
 }
 
 /* =====================
@@ -225,29 +227,23 @@ footer {
   </div>
 </section>
 
-<!-- FEATURE CARDS -->
+<!-- CARDS -->
 <section class="section">
   <div class="cards">
 
     <div class="card">
       <h3>Research</h3>
-      <p>
-        We study developmental genetics, neural circuitry, and microbial interactions in C. elegans.
-      </p>
+      <p>We study developmental genetics, neural circuitry, and microbial interactions in C. elegans.</p>
     </div>
 
     <div class="card">
       <h3>People</h3>
-      <p>
-        Meet the students, postdocs, and collaborators driving discovery in the lab.
-      </p>
+      <p>Meet the students, postdocs, and collaborators driving discovery in the lab.</p>
     </div>
 
     <div class="card">
       <h3>Publications</h3>
-      <p>
-        Explore our latest work published in leading journals in biology and genetics.
-      </p>
+      <p>Explore our latest work published in leading journals in biology and genetics.</p>
     </div>
 
   </div>
@@ -256,21 +252,19 @@ footer {
 <!-- NEWS -->
 <section class="section">
   <div class="news">
-
     <h2 style="color:#4B2E83;">Latest News</h2>
 
     <div class="news-item">
-      🧬 New paper accepted on C. elegans neural development
+      🧬 New C. elegans developmental biology paper published
     </div>
 
     <div class="news-item">
-      🎓 Congratulations to our graduate student on their fellowship award
+      🎓 Graduate student receives fellowship award
     </div>
 
     <div class="news-item">
-      🔬 Lab update: new imaging system installed for live worm tracking
+      🔬 New microscopy setup installed in the lab
     </div>
-
   </div>
 </section>
 
