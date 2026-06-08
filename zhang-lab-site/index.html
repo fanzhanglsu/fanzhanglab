@@ -56,31 +56,24 @@ body {
   overflow: hidden;
 }
 
-/* YOUR BACKGROUND IMAGE HERE */
+/* background image only — NO purple overlay */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background: url('elegan.jpeg') center/cover no-repeat;
-  filter: brightness(0.45);
+  filter: brightness(0.7);
   transform: scale(1.05);
 }
 
-/* purple overlay (gives Barrett-style aesthetic) */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(75, 46, 131, 0.75),
-    rgba(90, 63, 192, 0.55)
-  );
-}
-
+/* subtle readability fade only behind text */
 .hero-content {
   position: relative;
   max-width: 800px;
-  padding: 20px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
 }
 
 .hero h1 {
@@ -93,7 +86,6 @@ body {
   font-size: 18px;
   opacity: 0.95;
 }
-
 /* =====================
    BUTTONS
 ===================== */
