@@ -24,6 +24,263 @@
   </header>
 
   <main>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Zhang Lab</title>
+
+<style>
+/* =====================
+   GLOBAL STYLE
+===================== */
+body {
+  margin: 0;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+/* =====================
+   HERO SECTION
+===================== */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('c_elegans.jpg') center/cover no-repeat;
+  filter: brightness(0.45);
+  transform: scale(1.05);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(75, 46, 131, 0.75),
+    rgba(90, 63, 192, 0.55)
+  );
+}
+
+.hero-content {
+  position: relative;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 64px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.95;
+}
+
+/* Buttons */
+.btn-group {
+  margin-top: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  margin: 0 8px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: #5A3FC0;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #6b52d6;
+}
+
+.btn-outline {
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: #4B2E83;
+}
+
+/* =====================
+   SECTION WRAPPER
+===================== */
+.section {
+  padding: 80px 10%;
+}
+
+/* =====================
+   FEATURE CARDS
+===================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border: 1px solid rgba(90, 63, 192, 0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(90, 63, 192, 0.2);
+}
+
+.card h3 {
+  color: #4B2E83;
+  margin-bottom: 10px;
+}
+
+/* =====================
+   NEWS SECTION
+===================== */
+.news {
+  background: #f7f5ff;
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.news-item {
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.news-item:last-child {
+  border-bottom: none;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+  text-align: center;
+  padding: 40px;
+  background: #4B2E83;
+  color: white;
+  margin-top: 60px;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>Zhang Lab</h1>
+    <p>
+      Investigating the biology of <i>Caenorhabditis elegans</i> across development, 
+      behavior, and cellular systems.
+    </p>
+
+    <div class="btn-group">
+      <a href="#research" class="btn btn-primary">Research</a>
+      <a href="#join" class="btn btn-outline">Join the Lab</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE CARDS -->
+<section class="section">
+  <div class="cards">
+
+    <div class="card">
+      <h3>Research</h3>
+      <p>
+        We study developmental genetics, neural circuitry, and microbial interactions in C. elegans.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>People</h3>
+      <p>
+        Meet the students, postdocs, and collaborators driving discovery in the lab.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Publications</h3>
+      <p>
+        Explore our latest work published in leading journals in biology and genetics.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="section">
+  <div class="news">
+
+    <h2 style="color:#4B2E83;">Latest News</h2>
+
+    <div class="news-item">
+      🧬 New paper accepted on C. elegans neural development
+    </div>
+
+    <div class="news-item">
+      🎓 Congratulations to our graduate student on their fellowship award
+    </div>
+
+    <div class="news-item">
+      🔬 Lab update: new imaging system installed for live worm tracking
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  Zhang Lab © 2026 · Caenorhabditis elegans Research
+</footer>
+
+</body>
+</html>
     <section class="hero">
       <div class="container hero-grid">
         <div>
