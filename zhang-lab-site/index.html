@@ -156,9 +156,13 @@ body {
   gap: 28px;
 }
 
-/* remove ugly link styling */
-.card-link {
-  text-decoration: none;
+/* clickable cards with NO underline */
+.card-link,
+.card-link:hover,
+.card-link:focus,
+.card-link:active,
+.card-link:visited {
+  text-decoration: none !important;
   color: inherit;
 }
 
