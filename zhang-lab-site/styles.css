@@ -468,15 +468,6 @@ body {
 /* Purple top accent */
 .card {
   border-top: 5px solid #5E2D82;
-}
-
-/* Card headings */
-.card h2 {
-  color: #5E2D82;
-  margin-top: 0;
-  margin-bottom: 18px;
-}
-
 /* Undergrad full width */
 .undergrad-card {
   width: 100%;
