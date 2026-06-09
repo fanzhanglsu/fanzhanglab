@@ -588,25 +588,22 @@ renderPublications();
 </footer>
 <style>
 .site-footer {
-  width: 100%;
-  text-align: center;
-
-  padding: 0;              /* IMPORTANT: remove padding conflict */
-
-  border-top: 1px solid rgba(90, 11, 146, 0.2);
-
-  font-family: Arial, sans-serif;
-  font-size: 0.95rem;
-  color: #555;
-
-  background: #f8f8f8;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  height: 40px;           /* gives real vertical space to center in */
+  height: 34px;          /* smaller footer */
 
+  border-top: 2px solid rgba(90, 11, 146, 0.2);
+
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
   line-height: 1;
+
+  color: #555;
+  background: #f8f8f8;
 }
 </style>
