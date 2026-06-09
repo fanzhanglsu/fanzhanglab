@@ -238,21 +238,33 @@ body {
   flex-direction: column;
 }
 
-/* This is what pushes footer down */
+/* THIS is what pushes footer down */
+.page-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .page-content {
   flex: 1;
 }
 
-/* Footer */
+/* FOOTER */
 .site-footer {
-  text-align: center;
-  padding: 28px 20px;
-  border-top: 2px solid rgba(90, 11, 146, 0.2);
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-top: 1px solid rgba(90, 11, 146, 0.2);
+
   font-family: Arial, sans-serif;
   font-size: 0.95rem;
   color: #555;
+
   background: #f8f8f8;
-  width: 100%;
 }
 </style>
 </bodyt>
