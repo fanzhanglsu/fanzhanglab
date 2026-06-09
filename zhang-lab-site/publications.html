@@ -305,16 +305,17 @@ footer {
 <style>
 .publications-library {
   max-width: 1000px;
-  margin: 40px auto;
+  margin: 8px auto 40px; /* much closer to button */
   padding: 0 20px;
-  font-family: "Times New Roman", serif;
+  font-family: Arial, sans-serif;
 }
 
 .publication-controls {
   display: flex;
-  gap: 12px;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  flex-wrap: nowrap;
 }
 
 #publicationSearch {
@@ -328,6 +329,7 @@ footer {
 }
 
 #sortPublications {
+  width: 220px;
   padding: 14px 18px;
   border: 2px solid #5A0B92;
   border-radius: 10px;
@@ -335,6 +337,7 @@ footer {
   font-size: 1rem;
   font-family: inherit;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 #publicationsContainer {
