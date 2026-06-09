@@ -40,15 +40,33 @@
 </footer>
 
 <style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main page content */
+.page-content {
+  flex: 1;
+}
+
+/* Footer */
 .site-footer {
   text-align: center;
   padding: 28px 20px;
-  margin-top: 70px;
   border-top: 2px solid rgba(90, 11, 146, 0.2);
   font-family: Arial, sans-serif;
   font-size: 0.95rem;
   color: #555;
   background: #f8f8f8;
+  margin-top: auto;
+  width: 100%;
 }
 </style>
 </body>
