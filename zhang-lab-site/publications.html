@@ -42,19 +42,20 @@
   }
 
   /* Banner */
- .publications-banner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(48, 25, 72, 0.58);
-}
-
+ .publications-banner {
+    position: relative;
+    height: 260px; /* smaller than homepage */
+    background: url('simple.jpg') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   /* Dark overlay */
 .publications-banner::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(58, 33, 82, 0.42);
+  background: rgba(48, 25, 72, 0.58);
 }
   .banner-title {
     position: relative;
