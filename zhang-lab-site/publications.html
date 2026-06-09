@@ -586,21 +586,25 @@ renderPublications();
     <footer class="site-footer">
   Zhang Lab © 2026 · Caenorhabditis elegans Research
 </footer>
-<style>.site-footer {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
+<style>
+  .site-footer {
+  width: 100%;
+  text-align: center;
 
-  display: flex;
-  justify-content: center;  /* horizontal center */
-  align-items: center;      /* vertical center */
-
-  padding: 10px 20px;       /* keeps it not too thick */
-
-  border-top: 2px solid rgba(90, 11, 146, 0.2);
+  padding: 8px 0;              /* small, consistent height */
+  
+  border-top: 1px solid rgba(90, 11, 146, 0.2);
 
   font-family: Arial, sans-serif;
-  font-size: 1.05rem;       /* bigger font */
-
+  font-size: 0.95rem;
   color: #555;
+
   background: #f8f8f8;
-}</style>
+
+  display: flex;
+  justify-content: center;     /* horizontal center */
+  align-items: center;         /* vertical center */
+
+  line-height: 1;
+}
+</style>
