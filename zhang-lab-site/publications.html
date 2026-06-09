@@ -587,23 +587,52 @@ renderPublications();
   Zhang Lab © 2026 · Caenorhabditis elegans Research
 </footer>
 <style>
+/* ===== Publications Page Footer Fix ===== */
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Make main content take up remaining space */
+main {
+    flex: 1;
+}
+
+/* Override publications page spacing */
+.publications-page {
+    min-height: auto !important;
+    padding-bottom: 40px !important;
+}
+
+/* Remove excess spacing from publication containers */
+.publications-container,
+.publications-list,
+.publications-grid {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Remove extra margin from the last publication card */
+.publication-card:last-child {
+    margin-bottom: 0;
+}
+
+/* Footer styling (same as People page) */
 .site-footer {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  height: 34px;          /* smaller footer */
-
-  border-top: 2px solid rgba(90, 11, 146, 0.2);
-
-  font-family: Arial, sans-serif;
-  font-size: 0.95rem;
-  line-height: 1;
-
-  color: #555;
-  background: #f8f8f8;
+    margin-top: 0;
+    padding: 25px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(128, 0, 128, 0.2);
+    background-color: #f8f8f8;
+    color: #555;
+    font-size: 0.95rem;
 }
 </style>
