@@ -42,14 +42,12 @@
   }
 
   /* Banner */
-  .publications-banner {
-    position: relative;
-    height: 400px; /* smaller than homepage */
-    background: url('simple.jpg') center center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+ .publications-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(48, 25, 72, 0.58);
+}
 
   /* Dark overlay */
 .publications-banner::before {
