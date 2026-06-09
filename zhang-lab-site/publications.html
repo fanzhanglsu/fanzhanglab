@@ -591,13 +591,18 @@ renderPublications();
 .site-footer {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  text-align: center;
 
-  padding: 10px 20px;  /* ↓ reduced vertical space only */
+  display: flex;
+  justify-content: center;  
+  align-items: center;     
+
+  padding: 10px 20px;       
 
   border-top: 2px solid rgba(90, 11, 146, 0.2);
+
   font-family: Arial, sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.05rem;       
+
   color: #555;
   background: #f8f8f8;
 }
