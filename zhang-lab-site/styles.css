@@ -496,21 +496,4 @@ body {
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
   z-index: 1000;
 }
-/* =====================
-   FOOTER
-===================== */
-.site-footer {
-  width: 100%;
-  background: #ffffff;
-  border-top: 4px solid #7b6c97;
-  padding: 30px 20px;
-  text-align: center;
-  margin-top: 60px;
-}
 
-.site-footer p {
-  margin: 0;
-  color: #4B2E83;
-  font-size: 15px;
-  font-weight: 500;
-}
