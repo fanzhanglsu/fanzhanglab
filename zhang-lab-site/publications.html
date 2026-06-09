@@ -21,7 +21,123 @@
       </nav>
     </div>
   </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Publications | Zhang Lab</title>
 
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Times New Roman", Times, serif;
+    background-color: #ffffff;
+    color: #222;
+  }
+
+  /* Banner */
+  .publications-banner {
+    position: relative;
+    height: 260px; /* smaller than homepage */
+    background: url('simple.jpg') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Dark overlay */
+  .publications-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+  }
+
+  .banner-title {
+    position: relative;
+    color: white;
+    font-size: 3rem;
+    font-weight: 600;
+    z-index: 2;
+    text-align: center;
+  }
+
+  /* Main content */
+  .publications-container {
+    max-width: 1200px;
+    margin: 70px auto;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .publications-text {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 35px;
+    line-height: 1.7;
+  }
+
+  /* Purple button */
+  .scholar-button {
+    display: inline-block;
+    background-color: #6A0DAD;
+    color: white;
+    text-decoration: none;
+    padding: 14px 34px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .scholar-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(106, 13, 173, 0.25);
+    background-color: #5a0b92;
+  }
+
+  .scholar-button:visited,
+  .scholar-button:active,
+  .scholar-button:focus {
+    color: white;
+    text-decoration: none;
+    outline: none;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- Banner -->
+<section class="publications-banner">
+  <h1 class="banner-title">Publications</h1>
+</section>
+
+<!-- Main Content -->
+<section class="publications-container">
+
+  <p class="publications-text">
+    Explore publications from the Zhang Lab, highlighting research in 
+    microbiome interactions, host-microbe relationships, and 
+    <i>Caenorhabditis elegans</i> biology.
+  </p>
+
+  <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=-L5NA3sAAAAJ"
+     target="_blank"
+     class="scholar-button">
+    Full Publications Page
+  </a>
+
+</section>
+
+</body>
+</html>
   
   <main class="section">
     <div class="container narrow">
