@@ -589,11 +589,26 @@ renderPublications();
 
 <style>
 .site-footer {
-  padding: 14px 0;        /* gives balanced vertical space */
-  line-height: 1.2;       /* prevents text sitting too high */
+  width: 100%;
+  text-align: center;
+
+  padding: 0;              /* IMPORTANT: remove padding conflict */
+
+  border-top: 1px solid rgba(90, 11, 146, 0.2);
+
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+
+  background: #f8f8f8;
+
   display: flex;
-  align-items: center;    /* vertical centering */
   justify-content: center;
+  align-items: center;
+
+  height: 40px;           /* gives real vertical space to center in */
+
+  line-height: 1;
 }
 </style>
 
