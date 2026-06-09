@@ -584,27 +584,57 @@ renderPublications();
   
 </script>
 
-<body>
-
-  <div class="page-content">
-    <!-- ALL YOUR PAGE CONTENT -->
-  </div>
-
   <footer class="site-footer">
     Zhang Lab © 2026 · Caenorhabditis elegans Research
   </footer>
-
-</body>
-<style> 
-  html, body {
+<style>/* RESET */
+html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
+}
+
+/* PAGE LAYOUT */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* CONTENT AREA TAKES ALL SPACE */
+.page-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .page-content {
-  min-height: calc(100vh - 40px);
+  flex: 1;
 }
-</style>
- 
 
-  
+/* HEADER (optional clean baseline) */
+.site-header {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #eee;
+}
+
+/* ✅ FOOTER FIX (FULL WIDTH + PERFECT CENTERING) */
+.site-footer {
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-top: 1px solid rgba(90, 11, 146, 0.2);
+
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+
+  background: #f8f8f8;
+}</style>
+</html>
