@@ -543,3 +543,14 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+
+  .sidebar {
+    background: #f8f8f8 !important;  /* forces your intended color */
+    border-right: none;
+    border-bottom: 1px solid #eee;
+
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
