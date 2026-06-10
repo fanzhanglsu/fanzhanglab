@@ -228,26 +228,41 @@ html, body {
 
 <div class="pub-controls">
 
-<a
-href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=-L5NA3sAAAAJ"
-target="_blank"
-class="scholar-button">
-View Full Publication List
-</a>
+  <!-- centered button -->
+  <a
+    href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=-L5NA3sAAAAJ"
+    target="_blank"
+    class="scholar-button">
+    View Full Publication List
+  </a>
 
-<select id="sortPublications" class="sort-dropdown">
-<option value="newest">Newest First</option>
-<option value="oldest">Oldest First</option>
-</select>
+  <!-- search + sort row -->
+  <div class="search-sort-row">
+
+    <input
+      type="text"
+      id="pubSearch"
+      class="pub-search"
+      placeholder="Search publications..."
+    >
+
+    <select
+      id="sortPublications"
+      class="sort-dropdown">
+
+      <option value="newest">
+        Newest First
+      </option>
+
+      <option value="oldest">
+        Oldest First
+      </option>
+
+    </select>
+
+  </div>
 
 </div>
-
-<input
-type="text"
-id="pubSearch"
-class="pub-search"
-placeholder="Search publications..."
->
 
 <div id="publicationsList"></div>
 
