@@ -73,46 +73,66 @@ html, body {
 /* ---------- TOP CONTROLS ---------- */
 .pub-controls {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
+/* centered button */
 .scholar-button {
   background: #6f5b8b;
   color: white;
   text-decoration: none;
-  padding: 12px 20px;
+  padding: 12px 22px;
   border-radius: 12px;
   transition: 0.2s ease;
   font-size: 0.95rem;
+  margin-bottom: 22px;
 }
 
 .scholar-button:hover {
   background: #5b4b72;
 }
 
-.sort-dropdown {
-  padding: 12px 16px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  background: white;
-  font-size: 0.95rem;
+/* row for search + sort */
+.search-sort-row {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  align-items: center;
 }
 
-/* ---------- SEARCH ---------- */
+/* search takes most space */
 .pub-search {
-  width: 100%;
+  flex: 1;
   padding: 14px 18px;
   border-radius: 12px;
   border: 1px solid #ddd;
   font-size: 1rem;
   box-sizing: border-box;
-  margin-bottom: 30px;
+  margin: 0;
 }
 
+/* sort smaller */
+.sort-dropdown {
+  width: 210px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  background: white;
+  font-size: 0.95rem;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .search-sort-row {
+    flex-direction: column;
+  }
+
+  .sort-dropdown {
+    width: 100%;
+  }
+}
 /* ---------- STACKED CARDS ---------- */
 #publicationsList {
   display: flex;
