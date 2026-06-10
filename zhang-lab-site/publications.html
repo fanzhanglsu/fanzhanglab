@@ -21,273 +21,174 @@
       </nav>
     </div>
   </header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications | Zhang Lab</title>
+
 <style>
-:root {
-    --primary: #102542;
-    --accent: #2952A3;
-    --light: #f8fafc;
-    --border: #e2e8f0;
-    --text: #1e293b;
-    --muted: #64748b;
+/* ---------- RESET ---------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #fafafa;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ---------- HERO HEADER ---------- */
+.publications-hero {
+  position: relative;
+  height: 260px;
+  background:
+    linear-gradient(
+      rgba(95, 85, 120, 0.62),
+      rgba(95, 85, 120, 0.62)
+    ),
+    url("simple.jpg");
+
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background: #f7f9fc;
-    color: var(--text);
-    line-height: 1.7;
+.publications-hero h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
+/* ---------- PAGE ---------- */
+.publications-section {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 24px;
 }
 
-
-
-.controls {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin: 30px 0;
+/* SEARCH BAR */
+.pub-search {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 1rem;
+  margin-bottom: 36px;
+  box-sizing: border-box;
 }
 
-.search-box,
-.filter-box,
-.sort-box {
-    flex: 1;
-    min-width: 220px;
+/* ---------- CARD GRID ---------- */
+#publicationsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
 }
 
-input,
-select {
-    width: 100%;
-    padding: 14px 18px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    background: white;
-    font-size: 15px;
-    transition: 0.2s ease;
-}
-
-input:focus,
-select:focus {
-    outline: none;
-    border-color: var(--accent);
-}
-
-.stats {
-    margin-bottom: 25px;
-    color: var(--muted);
-    font-size: 15px;
-}
-
+/* ---------- CARD ---------- */
 .publication-card {
-    background: white;
-    border-radius: 18px;
-    padding: 28px;
-    margin-bottom: 20px;
-    border: 1px solid var(--border);
-    transition: all .25s ease;
+  background: white;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease;
 }
 
 .publication-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 35px rgba(15,23,42,0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.1);
 }
 
 .pub-year {
-    color: var(--accent);
-    font-weight: 600;
-    margin-bottom: 10px;
-    font-size: .95rem;
+  color: #6b5a84;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 
 .pub-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--primary);
-    margin-bottom: 10px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  color: #222;
 }
 
 .pub-authors {
-    color: var(--muted);
-    margin-bottom: 12px;
+  color: #666;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 
 .pub-journal {
-    font-style: italic;
-    color: #334155;
+  color: #7d748b;
+  font-style: italic;
+  margin-bottom: 20px;
 }
 
-footer {
-    text-align: center;
-    color: var(--muted);
-    padding: 40px 0;
-    margin-top: 50px;
+/* ---------- BUTTON ---------- */
+.pub-button {
+  display: inline-block;
+  background: #6f5b8b;
+  color: white;
+  text-decoration: none;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  transition: background 0.2s ease;
 }
 
-.no-results {
-    text-align: center;
-    color: var(--muted);
-    padding: 50px;
-    display: none;
+.pub-button:hover {
+  background: #5a4972;
 }
 
+/* ---------- MOBILE ---------- */
 @media (max-width: 768px) {
-    .controls {
-        flex-direction: column;
-    }
+  .publications-hero {
+    height: 200px;
+  }
 
-    .header-content h1 {
-        font-size: 2rem;
-    }
+  .publications-hero h1 {
+    font-size: 2.2rem;
+  }
 
-    .publication-card {
-        padding: 22px;
-    }
+  #publicationsList {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
 
-  
-<section class="publications-library">
+<body>
 
-  <!-- Search + Sort -->
-  <div class="publication-controls">
-    <input
-      type="text"
-      id="publicationSearch"
-      placeholder="Search publications, authors, or year..."
-    >
+<!-- HERO -->
+<section class="publications-hero">
+  <h1>Publications</h1>
+</section>
 
-    <select id="sortPublications">
-      <option value="newest">Newest First</option>
-      <option value="oldest">Oldest First</option>
-    </select>
-  </div>
+<!-- CONTENT -->
+<section class="publications-section">
 
-  <!-- Publications Container -->
-  <div id="publicationsContainer"></div>
+  <input
+    type="text"
+    id="pubSearch"
+    class="pub-search"
+    placeholder="Search publications..."
+  >
+
+  <div id="publicationsList"></div>
 
 </section>
 
-<style>
-.publications-library {
-  max-width: 1000px;
-  margin: -60px auto 40px;
-  padding: 0 20px;
-  font-family: Arial, sans-serif;
-  position: relative;
-}
-.publication-controls {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 28px;
-  flex-wrap: nowrap;
-}
-
-#publicationSearch {
-  flex: 1;
-  min-width: 250px;
-  padding: 14px 18px;
-  border: 2px solid #5A0B92;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-family: inherit;
-}
-
-#sortPublications {
-  width: 220px;
-  padding: 14px 18px;
-  border: 2px solid #5A0B92;
-  border-radius: 10px;
-  background: white;
-  font-size: 1rem;
-  font-family: inherit;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
-#publicationsContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.publication-card {
-  background: white;
-  border: 2px solid #5A0B92;
-  border-radius: 14px;
-  padding: 22px 26px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: 0.2s ease;
-}
-
-.publication-card:hover {
-  transform: translateY(-2px);
-}
-
-.year-badge {
-  display: inline-block;
-  background: #5A0B92;
-  color: white;
-  padding: 5px 14px;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  margin-bottom: 12px;
-}
-
-.publication-title {
-  font-size: 1.15rem;
-  margin-bottom: 10px;
-  color: #222;
-  line-height: 1.5;
-}
-
-.publication-authors {
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 14px;
-}
-
-.publication-link {
-  display: inline-block;
-  background: #5A0B92;
-  color: white;
-  text-decoration: none;
-  padding: 10px 18px;
-  border-radius: 8px;
-  transition: 0.2s ease;
-}
-
-.publication-link:hover {
-  background: #470773;
-}
-
-@media (max-width: 768px) {
-  .publication-controls {
-    flex-direction: column;
-  }
-
-  #sortPublications {
-    width: 100%;
-  }
-}
-</style>
-
 <script>
+
 const publications = [
-{
+  {
   year: 2026,
   title: "Shifts in soil microbiome surrounding a thermal treatment facility for hazardous waste: the hidden impact of environmentally persistent free radicals",
   authors: "Fan Zhang, Myron L Lard, Lavrent Khachatryan, Chuqi Guo, Aiyanah Sandifer, Nora M Villafuerte, Divine B Nde, Robert L Cook, Stephania A Cormier, Jennifer Richmond-Bryant",
@@ -427,53 +328,58 @@ const publications = [
   journal: "Review Article / Ocean Microbiology",
   link: "#"
 }
-const container = document.getElementById("publicationsContainer");
-const searchInput = document.getElementById("publicationSearch");
-const sortSelect = document.getElementById("sortPublications");
 
-function renderPublications() {
-  const searchTerm = searchInput.value.toLowerCase();
-  const sortType = sortSelect.value;
-
-  let filtered = publications.filter(pub =>
-    pub.title.toLowerCase().includes(searchTerm) ||
-    pub.authors.toLowerCase().includes(searchTerm) ||
-    pub.year.toString().includes(searchTerm)
-  );
-
-  filtered.sort((a, b) =>
-    sortType === "newest"
-      ? b.year - a.year
-      : a.year - b.year
-  );
-
+function renderPublications(filter = "") {
+  const container = document.getElementById("publicationsList");
   container.innerHTML = "";
 
+  const filtered = publications.filter(pub =>
+    pub.title.toLowerCase().includes(filter.toLowerCase()) ||
+    pub.authors.toLowerCase().includes(filter.toLowerCase()) ||
+    pub.journal.toLowerCase().includes(filter.toLowerCase()) ||
+    pub.year.toString().includes(filter)
+  );
+
   filtered.forEach(pub => {
-    container.innerHTML += `
-      <div class="publication-card">
-        <div class="year-badge">${pub.year}</div>
+    const card = document.createElement("div");
+    card.className = "publication-card";
 
-        <div class="publication-title">
-          ${pub.title}
-        </div>
+    card.innerHTML = `
+      <div class="pub-year">${pub.year}</div>
 
-        <div class="publication-authors">
-          <strong>Authors:</strong> ${pub.authors}
-        </div>
-
-        <a href="${pub.link}" target="_blank" class="publication-link">
-          Read Publication
-        </a>
+      <div class="pub-title">
+        ${pub.title}
       </div>
+
+      <div class="pub-authors">
+        ${pub.authors}
+      </div>
+
+      <div class="pub-journal">
+        ${pub.journal}
+      </div>
+
+      <a class="pub-button"
+         href="${pub.link}"
+         target="_blank">
+         Read Publication
+      </a>
     `;
+
+    container.appendChild(card);
   });
 }
 
-searchInput.addEventListener("input", renderPublications);
-sortSelect.addEventListener("change", renderPublications);
-
 renderPublications();
+
+document.getElementById("pubSearch")
+.addEventListener("input", (e) => {
+  renderPublications(e.target.value);
+});
+</script>
+
+</body>
+</html>
   
 </script>
     <footer class="site-footer">
