@@ -299,88 +299,62 @@ footer {
 /* ---------- MOBILE HOMEPAGE FIX ---------- */
 @media (max-width: 768px) {
 
-  /* prevent sideways scrolling */
-  html, body {
-    overflow-x: hidden;
+  .nav-wrap {
+    position: relative;
   }
 
-  /* overall spacing */
-  body {
+  .nav-toggle {
+    display: block !important;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #5a0b92;
+  }
+
+  /* overlay */
+  .nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.25s ease;
+    z-index: 998;
+  }
+
+  .nav-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* mobile menu panel */
+  .site-nav {
+    position: absolute;
+    top: 78px;
+    left: 0;
     width: 100%;
+    background: white;
+
+    display: flex;
+    flex-direction: column;
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   }
 
-  .container,
-  .page-content,
-  main {
-    width: 100%;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-    box-sizing: border-box;
+  .site-nav.active {
+    max-height: 500px;
   }
 
-  /* HERO SECTION */
-  .hero,
-  .hero-section,
-  .banner {
-    height: auto !important;
-    min-height: 320px;
-    padding: 60px 20px !important;
+  .site-nav a {
+    padding: 16px;
     text-align: center;
-    background-position: center !important;
-  }
-
-  .hero h1,
-  .hero-title {
-    font-size: 2rem !important;
-    line-height: 1.2;
-  }
-
-  .hero p,
-  .hero-subtitle {
-    font-size: 1rem !important;
-    line-height: 1.6;
-  }
-
-  /* stack any side-by-side sections */
-  .row,
-  .grid,
-  .two-column,
-  .home-grid,
-  .content-row,
-  .split-section {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 24px;
-  }
-
-  /* cards */
-  .card,
-  .research-card,
-  .news-card {
-    width: 100% !important;
-    margin: 0 !important;
-    box-sizing: border-box;
-  }
-
-  /* images */
-  img {
-    max-width: 100%;
-    height: auto !important;
-    display: block;
-  }
-
-  /* buttons */
-  .button,
-  .btn {
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-  }
-
-  /* footer */
-  .site-footer {
-    text-align: center;
-    padding: 14px 20px;
+    border-bottom: 1px solid #eee;
   }
 }
 /* DESKTOP */
