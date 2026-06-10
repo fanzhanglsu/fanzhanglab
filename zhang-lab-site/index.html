@@ -328,65 +328,6 @@ footer {
 <footer>
   Zhang Lab © 2026 · Caenorhabditis elegans Research
 </footer>
-<style>
-/* MOBILE ONLY */
-@media (max-width: 768px) {
-
-  .nav-toggle {
-    display: block !important;
-    font-size: 2rem;
-    border: none;
-    background: none;
-    cursor: pointer;
-    color: #5a0b92;
-  }
-
-  /* FORCE mobile menu hidden */
-  .site-nav {
-    display: none !important;
-    width: 100%;
-    background: white;
-    flex-direction: column;
-    margin-top: 12px;
-  }
-
-  /* FORCE open state */
-  .site-nav.mobile-open {
-    display: flex !important;
-  }
-
-  .site-nav a {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 18px;
-    border-top: 1px solid #eee;
-    box-sizing: border-box;
-  }
-}
-</style>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".site-nav");
-
-  console.log(toggle, nav);
-
-  if (!toggle || !nav) return;
-
-  toggle.addEventListener("click", function () {
-
-    if (window.innerWidth <= 768) {
-      nav.classList.toggle("mobile-open");
-    }
-
-  });
-
-});
-</script>
-
 </body>
 </html>
 
