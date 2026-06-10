@@ -1,4 +1,4 @@
-<script>
+
 document.addEventListener("DOMContentLoaded", function () {
 
   const toggle = document.querySelector(".nav-toggle");
@@ -15,4 +15,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
-</script>
+
