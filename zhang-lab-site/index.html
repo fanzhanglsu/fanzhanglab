@@ -428,41 +428,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
-  <script>
+<script>
 (function () {
 
   function initNav() {
 
-    const toggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".site-nav");
-    const overlay = document.querySelector(".nav-overlay");
+    // ONLY select inside header (prevents duplicate-page bugs)
+    const header = document.querySelector(".site-header");
+    if (!header) return;
 
-    if (!toggle || !nav || !overlay) return;
+    const toggle = header.querySelector(".nav-toggle");
+    const nav = header.querySelector(".site-nav");
 
-    function openMenu() {
-      nav.classList.add("active");
-      overlay.classList.add("active");
-    }
-
-    function closeMenu() {
-      nav.classList.remove("active");
-      overlay.classList.remove("active");
-    }
+    if (!toggle || !nav) return;
 
     toggle.addEventListener("click", function (e) {
+      e.preventDefault();
       e.stopPropagation();
 
-      if (nav.classList.contains("active")) {
-        closeMenu();
-      } else {
-        openMenu();
-      }
-    });
-
-    overlay.addEventListener("click", closeMenu);
-
-    nav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", closeMenu);
+      nav.classList.toggle("active");
     });
 
   }
