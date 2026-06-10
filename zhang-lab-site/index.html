@@ -22,6 +22,20 @@
       </nav>
     </div>
   </header>
+  <script>
+document.addEventListener("click", function (e) {
+
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".site-nav");
+
+  if (!toggle || !nav) return;
+
+  if (e.target.classList.contains("nav-toggle")) {
+    nav.classList.toggle("active");
+  }
+
+});
+</script>
   <main>
 <!DOCTYPE html>
 <html lang="en">
