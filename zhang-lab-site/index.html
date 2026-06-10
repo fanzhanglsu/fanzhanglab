@@ -237,7 +237,72 @@ footer {
   background: #4B2E83;
   color: white;
 }
+<style>
+/* MOBILE ONLY */
+@media screen and (max-width: 768px) {
 
+  /* keep header clean */
+  .nav-wrap {
+    position: relative;
+  }
+
+  /* hamburger */
+  .nav-toggle {
+    display: block !important;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #5a0b92;
+  }
+
+  /* hide desktop nav */
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    display: none !important;
+    flex-direction: column;
+
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+    border-radius: 0 0 14px 14px;
+    overflow: hidden;
+    z-index: 999;
+  }
+
+  /* show menu */
+  .site-nav.show {
+    display: flex !important;
+  }
+
+  /* links */
+  .site-nav a {
+    color: #333 !important;
+    text-decoration: none;
+    text-align: center;
+
+    padding: 18px;
+    border-bottom: 1px solid #eee;
+
+    background: white;
+  }
+
+  .site-nav a:hover {
+    background: #f7f7f7;
+  }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 769px) {
+  .nav-toggle {
+    display: none !important;
+  }
+}
+</style>
 /* =====================
    RESPONSIVE
 ===================== */
@@ -331,18 +396,17 @@ footer {
   <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".site-nav");
+  const toggle =
+    document.querySelector(".nav-toggle");
+
+  const nav =
+    document.querySelector(".site-nav");
 
   if (!toggle || !nav) return;
 
-  toggle.addEventListener("click", function () {
-
-    if (window.innerWidth <= 768) {
-      nav.classList.toggle("mobile-open");
-    }
-
-  });
+  toggle.onclick = function () {
+    nav.classList.toggle("show");
+  };
 
 });
 </script>
