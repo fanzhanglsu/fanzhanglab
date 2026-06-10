@@ -523,32 +523,7 @@ body {
 
   line-height: 1;
 }
-@media (max-width: 768px) {
 
-  /* prevent horizontal scrolling issues */
-  html, body {
-    overflow-x: hidden;
-  }
-
-  /* keep layout from breaking on small screens */
-  .layout {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* make sidebar responsive but unchanged visually */
-  .sidebar {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* ensure content doesn’t get squeezed */
-  .page-content {
-    width: 100%;
-    box-sizing: border-box;
-  }
-}
 
 @media (max-width: 768px) {
 
