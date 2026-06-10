@@ -296,7 +296,27 @@ footer {
     background: #f7f7f7;
   }
 }
+/* MOBILE FIX */
+@media screen and (max-width: 900px) {
 
+  .cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    width: 100%;
+  }
+
+  .card-link {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .card {
+    width: 100% !important;
+    min-height: auto !important;
+    box-sizing: border-box;
+  }
+}
 <style>
 /* =====================
    RESPONSIVE
