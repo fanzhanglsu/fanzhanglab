@@ -80,7 +80,48 @@ html, body {
   margin-bottom: 36px;
   box-sizing: border-box;
 }
+.pub-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
 
+.scholar-button {
+  background: #6f5b8b;
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  transition: 0.2s ease;
+}
+
+.scholar-button:hover {
+  background: #5c4a75;
+}
+
+.sort-dropdown {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #d4d4d4;
+  font-size: 0.95rem;
+  background: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .pub-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .scholar-button {
+    text-align: center;
+  }
+}
 /* ---------- CARD GRID ---------- */
 #publicationsList {
   display: grid;
@@ -178,11 +219,29 @@ html, body {
   class="pub-search"
   placeholder="Search publications..."
 >
+<!-- TOP CONTROLS -->
+<div class="pub-controls">
 
+  <a
+    href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=-L5NA3sAAAAJ"
+    target="_blank"
+    class="scholar-button"
+  >
+    View Full Publication List
+  </a>
+
+  <select id="sortPublications" class="sort-dropdown">
+    <option value="newest">Newest First</option>
+    <option value="oldest">Oldest First</option>
+  </select>
+
+</div>
 <!-- PUBLICATIONS -->
 <div id="publicationsList"></div>
 
 <script>
+function renderPublications(search = "") {
+
 const publications = [
 
 {
@@ -346,6 +405,81 @@ const publications = [
 }
 
 ];
+
+  const sortType =
+    document.getElementById("sortPublications").value;
+
+  let filtered = publications.filter(pub =>
+    pub.title.toLowerCase().includes(search.toLowerCase()) ||
+    pub.authors.toLowerCase().includes(search.toLowerCase()) ||
+    pub.journal.toLowerCase().includes(search.toLowerCase()) ||
+    pub.year.toString().includes(search)
+  );
+
+  // SORTING
+  filtered.sort((a, b) => {
+    if (sortType === "newest") {
+      return b.year - a.year;
+    } else {
+      return a.year - b.year;
+    }
+  });
+
+  filtered.forEach(pub => {
+
+    const card = document.createElement("div");
+    card.className = "publication-card";
+
+    card.innerHTML = `
+      <div class="pub-year">${pub.year}</div>
+
+      <div class="pub-title">
+        ${pub.title}
+      </div>
+
+      <div class="pub-authors">
+        ${pub.authors}
+      </div>
+
+      <div class="pub-journal">
+        ${pub.journal}
+      </div>
+
+      <a
+        href="${pub.link}"
+        target="_blank"
+        class="pub-button"
+      >
+        Read Publication
+      </a>
+    `;
+
+    list.appendChild(card);
+  });
+}
+
+// Initial load
+renderPublications();
+
+// Search
+document.getElementById("pubSearch")
+.addEventListener("input", function(e) {
+  renderPublications(e.target.value);
+});
+
+// Sort dropdown
+document.getElementById("sortPublications")
+.addEventListener("change", function() {
+
+  const currentSearch =
+    document.getElementById("pubSearch").value;
+
+  renderPublications(currentSearch);
+});
+</script>
+  
+  <script>
+
 
 // SORT NEWEST → OLDEST
 publications.sort((a, b) => b.year - a.year);
