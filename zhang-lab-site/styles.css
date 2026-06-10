@@ -553,41 +553,4 @@ body {
     width: 100%;
     box-sizing: border-box;
   }
-}
-@media (max-width: 768px) {
 
-  .nav-toggle {
-    display: block !important;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #5a0b92;
-  }
-
-  .site-nav {
-    position: absolute;
-    top: 78px;
-    left: 0;
-    width: 100%;
-    background: white;
-    flex-direction: column;
-
-    display: flex;
-    max-height: 0;
-    overflow: hidden;
-
-    transition: max-height 0.3s ease;
-    z-index: 9999;
-  }
-
-  .site-nav.active {
-    max-height: 500px;
-  }
-
-  .site-nav a {
-    padding: 16px;
-    border-bottom: 1px solid #eee;
-    text-align: center;
-  }
-}
