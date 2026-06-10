@@ -1,22 +1,14 @@
 <script>
-(function () {
-  function initMenu() {
+document.addEventListener("DOMContentLoaded", function () {
 
-    const toggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".site-nav");
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".site-nav");
 
-    if (!toggle || !nav) return;
+  if (!toggle || !nav) return;
 
-    toggle.addEventListener("click", function () {
-      nav.classList.toggle("active");
-    });
+  toggle.addEventListener("click", function () {
+    nav.classList.toggle("active");
+  });
 
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initMenu);
-  } else {
-    initMenu();
-  }
-})();
+});
 </script>
