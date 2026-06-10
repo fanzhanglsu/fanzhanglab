@@ -302,8 +302,22 @@ footer {
    RESPONSIVE
 ===================== */
 @media (max-width: 900px) {
+
   .cards {
-    grid-template-columns: 1fr;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .card-link {
+    width: 100%;
+    display: block !important;
+  }
+
+  .card {
+    width: 100%;
+    min-height: auto;
+    box-sizing: border-box;
   }
 
   .hero h1 {
