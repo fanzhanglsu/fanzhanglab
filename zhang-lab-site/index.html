@@ -296,26 +296,23 @@ footer {
     background: #f7f7f7;
   }
 }
-/* MOBILE FIX */
+/* MOBILE ONLY */
 @media screen and (max-width: 900px) {
 
-  .cards {
+  .split {
     display: flex !important;
     flex-direction: column !important;
-    gap: 20px !important;
-    width: 100%;
+    gap: 34px;
   }
 
-  .card-link {
-    display: block !important;
+  .split > div {
     width: 100% !important;
   }
 
-  .card {
-    width: 100% !important;
-    min-height: auto !important;
-    box-sizing: border-box;
+  .section {
+    padding: 50px 24px !important;
   }
+
 }
   /* MOBILE FIX */
 @media screen and (max-width: 900px) {
