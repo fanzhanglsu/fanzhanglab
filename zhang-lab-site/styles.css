@@ -219,6 +219,42 @@ a:hover { text-decoration: underline; }
     display: flex !important;
   }
 }
+/* MOBILE ONLY */
+@media (max-width: 768px) {
+
+  .nav-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: rgba(90, 11, 146, 0.08);
+
+    color: #5a0b92;
+    font-size: 1.8rem;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    padding: 0;
+  }
+
+  /* hover / tap */
+  .nav-toggle:hover {
+    background: rgba(90, 11, 146, 0.14);
+    transform: scale(1.04);
+  }
+
+  .nav-toggle:active {
+    transform: scale(0.96);
+  }
+}
 /* Better spacing for Join page */
 .card p {
   margin-bottom: 14px;
