@@ -188,51 +188,30 @@ a:hover { text-decoration: underline; }
 .footer-wrap a { margin-left: 1rem; }
 
 <style>
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .hero-grid, .split, .grid-3, .grid-2 {
+    grid-template-columns: 1fr;
+  }
 
-  /* show hamburger */
   .nav-toggle {
-    display: block !important;
-    font-size: 2rem;
-    border: none;
-    background: none;
-    cursor: pointer;
-    color: #5a0b92;
+    display: inline-block;
   }
 
-  /* hidden by default */
   .site-nav {
-    display: none !important;
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    padding: 1rem;
     flex-direction: column;
-    width: 100%;
-    background: white !important;
-    margin-top: 12px;
+    align-items: flex-start;
   }
 
-  /* OPEN STATE */
-  .site-nav.mobile-open {
-    display: flex !important;
-  }
-
-  /* links */
-  .site-nav a {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 18px;
-    border-top: 1px solid #eee;
-
-    color: #333 !important;
-    background: white !important;
-    text-decoration: none !important;
-
-    font-size: 1rem;
-    box-sizing: border-box;
-  }
-
-  .site-nav a:hover {
-    background: #f7f7f7 !important;
-    color: #5a0b92 !important;
+  .site-nav.open {
+    display: flex;
   }
 }
 </style>
