@@ -187,8 +187,34 @@ a:hover { text-decoration: underline; }
 
 .footer-wrap a { margin-left: 1rem; }
 
+<style>
 @media (max-width: 768px) {
 
+  /* show hamburger */
+  .nav-toggle {
+    display: block !important;
+    font-size: 2rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #5a0b92;
+  }
+
+  /* hidden by default */
+  .site-nav {
+    display: none !important;
+    flex-direction: column;
+    width: 100%;
+    background: white !important;
+    margin-top: 12px;
+  }
+
+  /* OPEN STATE */
+  .site-nav.mobile-open {
+    display: flex !important;
+  }
+
+  /* links */
   .site-nav a {
     display: block;
     width: 100%;
@@ -198,17 +224,18 @@ a:hover { text-decoration: underline; }
 
     color: #333 !important;
     background: white !important;
-    text-decoration: none;
+    text-decoration: none !important;
 
     font-size: 1rem;
     box-sizing: border-box;
   }
 
   .site-nav a:hover {
-    background: #f7f7f7;
+    background: #f7f7f7 !important;
     color: #5a0b92 !important;
   }
 }
+</style>
 /* Better spacing for Join page */
 .card p {
   margin-bottom: 14px;
