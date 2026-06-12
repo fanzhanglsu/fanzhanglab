@@ -227,6 +227,36 @@
 </footer>
 
 <style>
+  /* MOBILE NEWS FIX */
+@media screen and (max-width: 900px) {
+
+  /* stack news items vertically */
+  .news-item {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px;
+    align-items: center;
+  }
+
+  /* make images bigger */
+  .news-item img {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    height: 220px !important;
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 14px;
+  }
+
+  /* text spacing */
+  .news-item-content,
+  .news-item div {
+    width: 100%;
+    text-align: left;
+  }
+}
 .site-footer {
   text-align: center;
   padding: 28px 20px;
