@@ -266,6 +266,191 @@ html, body {
   </div>
 
 </div>
+  <section class="featured-publications">
+  <h1>Featured Publications</h1>
+  <p class="pub-subtitle">
+    Highlighting selected research from the Zhang Lab.
+  </p>
+
+  <div class="publication-grid">
+
+    <!-- Publication 1 -->
+    <a href="PASTE_ARTICLE_LINK" target="_blank" class="publication-card">
+      <img src="microbiome-research.jpg" alt="Microbiome Research">
+
+      <div class="publication-content">
+        <span class="pub-tag">Microbiome</span>
+
+        <h3>
+          Caenorhabditis elegans as a Model for Microbiome Research
+        </h3>
+
+        <p class="journal">
+          Frontiers in Microbiology
+        </p>
+
+        <p class="preview">
+          A foundational review exploring how
+          <i>C. elegans</i> serves as a model system
+          for microbiome-host interactions.
+        </p>
+
+        <span class="read-more">
+          Read Article →
+        </span>
+      </div>
+    </a>
+
+    <!-- Publication 2 -->
+    <a href="PASTE_ARTICLE_LINK" target="_blank" class="publication-card">
+      <img src="cembio.jpg" alt="CeMbio Resource">
+
+      <div class="publication-content">
+        <span class="pub-tag">C. elegans</span>
+
+        <h3>
+          CeMbio – The Caenorhabditis elegans Microbiome Resource
+        </h3>
+
+        <p class="journal">
+          Nature Communications
+        </p>
+
+        <p class="preview">
+          Introducing a standardized microbiome
+          resource for reproducible studies in
+          <i>C. elegans</i> biology.
+        </p>
+
+        <span class="read-more">
+          Read Article →
+        </span>
+      </div>
+    </a>
+
+    <!-- Publication 3 -->
+    <a href="PASTE_ARTICLE_LINK" target="_blank" class="publication-card">
+      <img src="marine-sponge.jpg" alt="Marine Sponge Research">
+
+      <div class="publication-content">
+        <span class="pub-tag">Symbiosis</span>
+
+        <h3>
+          Phosphorus Sequestration in the Form of Polyphosphate by Microbial Symbionts in Marine Sponges
+        </h3>
+
+        <p class="journal">
+          Proceedings of the National Academy of Sciences
+        </p>
+
+        <p class="preview">
+          Examining how microbial symbionts
+          regulate phosphorus storage in marine
+          sponge ecosystems.
+        </p>
+
+        <span class="read-more">
+          Read Article →
+        </span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<style>
+.featured-publications {
+  padding: 70px 20px;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.featured-publications h1 {
+  text-align: center;
+  color: #461D7C;
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+}
+
+.pub-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 45px;
+}
+
+.publication-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 32px;
+}
+
+.publication-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.publication-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(70,29,124,0.18);
+}
+
+.publication-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.publication-content {
+  padding: 24px;
+}
+
+.pub-tag {
+  background: #EEE7F8;
+  color: #461D7C;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.publication-content h3 {
+  color: #222;
+  font-size: 1.25rem;
+  margin: 18px 0 12px;
+  line-height: 1.4;
+}
+
+.journal {
+  color: #777;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+
+.preview {
+  color: #555;
+  line-height: 1.6;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 18px;
+  background: #E6DDF5;
+  color: #461D7C;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.publication-card:hover .read-more {
+  background: #461D7C;
+  color: white;
+}
+</style>
 
 <div id="publicationsList"></div>
 
