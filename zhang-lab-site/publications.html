@@ -411,7 +411,217 @@ html, body {
   }
 }
 </style>
+<section class="featured-publications">
+  <h1>Featured Publications</h1>
+  <p class="pub-subtitle">
+    Highlighting selected research from the Zhang Lab.
+  </p>
 
+  <div class="publication-grid">
+
+    <!-- Publication 1 -->
+    <a href="PASTE_ARTICLE_LINK" target="_blank" class="publication-card">
+      <img src="pub1.webp" alt="Microbiome Research">
+
+      <div class="publication-content">
+        <span class="pub-tag">Microbiome</span>
+
+        <h3>
+          Caenorhabditis elegans as a Model for Microbiome Research
+        </h3>
+
+        <p class="preview">
+          Exploring <i>C. elegans</i> as a model system
+          for microbiome-host interactions.
+        </p>
+
+        <span class="read-more">
+          Read Article →
+        </span>
+      </div>
+    </a>
+
+    <!-- Publication 2 -->
+    <a href="PASTE_ARTICLE_LINK" target="_blank" class="publication-card">
+      <img src="pub2.png" alt="CeMbio Resource">
+
+      <div class="publication-content">
+        <span class="pub-tag">C. elegans</span>
+
+        <h3>
+          CeMbio – The Caenorhabditis elegans Microbiome Resource
+        </h3>
+
+        <p class="preview">
+          A standardized microbiome resource
+          for reproducible studies in
+          <i>C. elegans</i>.
+        </p>
+
+        <span class="read-more">
+          Read Article →
+        </span>
+      </div>
+    </a>
+
+    <!-- Publication 3 -->
+    <a href="PASTE_ARTICLE_LINK" target="_blank" class="publication-card">
+      <img src="pub3.png" alt="Marine Sponge Research">
+
+      <div class="publication-content">
+        <span class="pub-tag">Symbiosis</span>
+
+        <h3>
+          Phosphorus Sequestration by Microbial
+          Symbionts in Marine Sponges
+        </h3>
+
+        <p class="preview">
+          Investigating phosphorus storage
+          by microbial symbionts in
+          marine sponge ecosystems.
+        </p>
+
+        <span class="read-more">
+          Read Article →
+        </span>
+      </div>
+    </a>
+
+    <!-- Publication 4 -->
+    <a href="PASTE_ARTICLE_LINK" target="_blank" class="publication-card">
+      <img src="pub4.png" alt="Natural Genetic Variation Research">
+
+      <div class="publication-content">
+        <span class="pub-tag">Genetics</span>
+
+        <h3>
+          Natural Genetic Variation Drives
+          Microbiome Selection in the
+          <i>Caenorhabditis elegans</i> Gut
+        </h3>
+
+        <p class="preview">
+          Exploring how host genetics shape
+          microbiome composition in the
+          <i>C. elegans</i> gut.
+        </p>
+
+        <span class="read-more">
+          Read Article →
+        </span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<style>
+.featured-publications {
+  max-width: 1350px;
+  margin: auto;
+  padding: 55px 20px;
+}
+
+.featured-publications h1 {
+  text-align: center;
+  color: #461D7C;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.pub-subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 38px;
+  font-size: 1rem;
+}
+
+.publication-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.publication-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.publication-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(70,29,124,0.18);
+}
+
+.publication-card img {
+  width: 100%;
+  height: 145px;
+  object-fit: cover;
+}
+
+.publication-content {
+  padding: 18px;
+}
+
+.pub-tag {
+  background: #EEE7F8;
+  color: #461D7C;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.publication-content h3 {
+  color: #222;
+  font-size: 0.95rem;
+  margin: 14px 0 10px;
+  line-height: 1.4;
+  min-height: 75px;
+}
+
+.preview {
+  color: #555;
+  line-height: 1.5;
+  font-size: 0.9rem;
+  min-height: 70px;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 14px;
+  background: #E6DDF5;
+  color: #461D7C;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.publication-card:hover .read-more {
+  background: #461D7C;
+  color: white;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .publication-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .publication-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
   <!-- search + sort row -->
   <div class="search-sort-row">
 
