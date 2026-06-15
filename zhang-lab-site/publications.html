@@ -405,6 +405,27 @@ html, body {
   font-size: 0.93rem;
   line-height: 1.55;
 }
+    .read-more {
+  display: inline-block;
+  margin-top: auto;
+  align-self: flex-start;
+
+  background: #E6DDF5;
+  color: #461D7C;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+
+  border: 2px solid #461D7C;
+}
+
+/* Hover effect */
+.publication-card:hover .read-more {
+  background: #461D7C;
+  color: white;
+}
 
 @media (max-width: 1200px) {
   .featured-publications {
