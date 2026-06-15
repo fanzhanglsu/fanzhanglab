@@ -227,28 +227,40 @@
 </footer>
 
 <style>
+/* ---------- MOBILE NEWS FIX ---------- */
+@media (max-width: 768px) {
 
-/* MOBILE */
-@media (max-width: 900px) {
-
-  .news-wrapper {
-    padding: 30px 20px;
+  .container.narrow {
+    width: 92%;
+    max-width: 100%;
+    padding: 0;
   }
 
-  .news-card {
-    padding: 28px;
+  .stack {
+    gap: 18px;
   }
 
-  .news-images {
-    grid-template-columns: 1fr;
+  .card {
+    padding: 20px;
+    border-radius: 18px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  .news-images img {
-    height: 220px;
+  .card h2 {
+    font-size: 1.2rem;
+    line-height: 1.3;
   }
 
-  .news-year {
-    font-size: 2.2rem;
+  .card ul {
+    padding-left: 18px;
+    margin: 0;
+  }
+
+  .card li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
   }
 }
 
