@@ -515,80 +515,66 @@ html, body {
 
   </div>
 </section>
-
-<style>
+  <style>
 .featured-publications {
-  max-width: 1350px;
+  max-width: 1600px; /* wider section */
   margin: auto;
-  padding: 55px 20px;
-}
-
-.featured-publications h1 {
-  text-align: center;
-  color: #461D7C;
-  font-size: 2.4rem;
-  margin-bottom: 10px;
-}
-
-.pub-subtitle {
-  text-align: center;
-  color: #666;
-  margin-bottom: 38px;
-  font-size: 1rem;
+  padding: 55px 40px;
 }
 
 .publication-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
+  gap: 28px;
 }
 
 .publication-card {
   background: white;
-  border-radius: 18px;
+  border-radius: 20px;
   overflow: hidden;
   text-decoration: none;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
   transition: all 0.3s ease;
+  min-width: 0;
 }
 
 .publication-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(70,29,124,0.18);
+  box-shadow: 0 14px 30px rgba(70,29,124,0.18);
 }
 
 .publication-card img {
   width: 100%;
-  height: 145px;
+  height: 220px; /* taller image = fatter feel */
   object-fit: cover;
 }
 
 .publication-content {
-  padding: 18px;
+  padding: 22px;
 }
 
 .pub-tag {
   background: #EEE7F8;
   color: #461D7C;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 999px;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 600;
 }
 
 .publication-content h3 {
   color: #222;
-  font-size: 0.95rem;
-  margin: 14px 0 10px;
-  line-height: 1.4;
-  min-height: 75px;
+  font-size: 1.05rem;
+  margin: 14px 0 12px;
+  line-height: 1.45;
+  min-height: 80px;
 }
 
 .preview {
   color: #555;
-  line-height: 1.5;
-  font-size: 0.9rem;
-  min-height: 70px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  min-height: 72px;
 }
 
 .read-more {
@@ -596,10 +582,9 @@ html, body {
   margin-top: 14px;
   background: #E6DDF5;
   color: #461D7C;
-  padding: 8px 14px;
+  padding: 10px 16px;
   border-radius: 10px;
   font-weight: 600;
-  font-size: 0.9rem;
   transition: all 0.3s ease;
 }
 
@@ -621,7 +606,8 @@ html, body {
     grid-template-columns: 1fr;
   }
 }
-</style>
+    </style>
+
   <!-- search + sort row -->
   <div class="search-sort-row">
 
