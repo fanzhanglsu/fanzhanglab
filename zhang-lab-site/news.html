@@ -234,6 +234,32 @@
 </footer>
 
 <style>
+  .year-nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin:25px 0 40px;
+}
+
+.year-nav a{
+    text-decoration:none;
+    background:#3b6d63;
+    color:white;
+    padding:10px 22px;
+    border-radius:999px;
+    font-weight:600;
+    transition:.25s;
+}
+
+.year-nav a:hover{
+    background:#295147;
+    transform:translateY(-2px);
+}
+
+html{
+    scroll-behavior:smooth;
+}
 /* ---------- MOBILE NEWS FIX ---------- */
 @media (max-width: 768px) {
 
