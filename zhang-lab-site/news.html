@@ -234,36 +234,31 @@
 </footer>
 
 <style>
-/* Year navigation */
 .year-nav{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:10px;
-    margin:25px 0 35px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin:25px 0 40px;
 }
 
 .year-nav a{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    height:40px;              /* Smaller height */
-    padding:0 8px;
-
-    background:#5E3A9E;
-    color:white;
     text-decoration:none;
+    background:#3b6d63;
+    color:white;
+    padding:10px 22px;
+    border-radius:999px;
     font-weight:600;
-    font-size:0.95rem;
-
-    border:1px solid #4A2D7A;
-    border-radius:4px;        /* More rectangular */
-    transition:0.2s ease;
+    transition:.25s;
 }
 
 .year-nav a:hover{
-    background:#4A2D7A;
-    border-color:#3B235F;
+    background:#295147;
+    transform:translateY(-2px);
+}
+
+html{
+    scroll-behavior:smooth;
 }
 /* ---------- MOBILE NEWS FIX ---------- */
 @media (max-width: 768px) {
