@@ -452,6 +452,18 @@ footer {
         </div>
       </div>
     </section>
+   <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const video = document.querySelector(".hero-video");
+
+  if (video) {
+    video.muted = true;
+    video.play().catch(err => {
+      console.log("Autoplay blocked:", err);
+    });
+  }
+});
+</script>
 <!-- FOOTER -->
 <footer>
   Zhang Lab © 2026 · Caenorhabditis elegans Research
