@@ -279,6 +279,9 @@ html{
 
   border-bottom: none;
 }
+  .year-nav.scrolled {
+  border-bottom: 1px solid #e5e5e5;
+}
 /* ---------- MOBILE NEWS FIX ---------- */
 @media (max-width: 768px) {
 
@@ -331,6 +334,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
 
+});
+</script>
+  <script>
+const yearNav = document.querySelector(".year-nav");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    yearNav.classList.add("scrolled");
+  } else {
+    yearNav.classList.remove("scrolled");
+  }
 });
 </script>
 </body>
