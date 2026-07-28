@@ -265,14 +265,19 @@
 html{
     scroll-behavior:smooth;
 }
-  .meta {
+ .year-nav {
   position: sticky;
-  top: 72px; /* Adjust to match your header height */
+  top: 72px;              /* Just below your main header */
+  z-index: 999;
+
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
   background: white;
-  z-index: 10;
-  padding: 10px 0;
-  color: #5E2D82;
-  border-bottom: 2px solid #e5e5e5;
+  padding: 12px 0;
+
+  border-bottom: 1px solid #e5e5e5;
 }
 /* ---------- MOBILE NEWS FIX ---------- */
 @media (max-width: 768px) {
