@@ -385,41 +385,29 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 35px;
-
-    width: 100%;
+    gap: 30px;
     max-width: 1800px;
     margin: 40px auto;
 }
 
 .person-card {
     display: flex;
-    align-items: stretch;
-
-    width: calc(50% - 18px);   /* Two cards per row */
-    max-width: 850px;          /* Prevents them from stretching too much */
-
+    width: 700px;      /* Try 700–800px */
     background: #f8f8f8;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,.08);
 }
 
 .person-card img {
-    width: 240px;
-    flex-shrink: 0;
+    width: 220px;
+    height: 280px;      /* Fixed height */
     object-fit: cover;
+    flex-shrink: 0;
 }
 
 .person-info {
+    padding: 25px;
     flex: 1;
-    padding: 30px;
-}
-
-@media (max-width: 1200px) {
-    .person-card {
-        width: 100%;
-    }
 }
 </style>
           <script>
