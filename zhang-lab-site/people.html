@@ -428,7 +428,26 @@
     line-height: 1.6;
     color: #444;
 }
+/* ===== People Page ===== */
 
+/* Make each person span almost the full page */
+#people > div {
+    max-width: 1400px !important;
+    width: 95% !important;
+    gap: 30px !important;
+}
+
+/* Make the photo larger */
+#people > div > div:first-child {
+    width: 340px !important;
+    flex-shrink: 0;
+}
+
+/* Make the bio fill the remaining space */
+#people > div > div:last-child {
+    flex: 1 !important;
+    min-width: 500px !important;
+}
 @media (max-width: 768px) {
     .people-grid {
         grid-template-columns: 1fr;
