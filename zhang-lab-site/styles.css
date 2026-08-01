@@ -535,3 +535,25 @@ body {
     width: 100%;
     box-sizing: border-box;
   }
+  .faculty-contact {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.faculty-contact p {
+    margin: 0 0 12px;
+}
+
+.faculty-contact strong {
+    color: #461D7C;
+}
+
+.faculty-contact a {
+    color: #461D7C;
+    text-decoration: none;
+}
+
+.faculty-contact a:hover {
+    text-decoration: underline;
+}
