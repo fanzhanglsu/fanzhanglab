@@ -4,7 +4,214 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>People | Zhang Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --ink: #1c2733;
+      --purple: #461D7C;
+      --line: rgba(70, 29, 124, 0.14);
+      --card-bg: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    .people-page {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--ink);
+      background: #ffffff;
+    }
+
+    .people-container {
+      width: min(95%, 1600px);
+      margin: 0 auto;
+      padding: 56px 0 40px;
+    }
+
+    /* Section headings */
+    .section-title {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 2rem;
+      color: var(--purple);
+      margin: 70px 0 30px;
+      font-weight: 700;
+    }
+
+    /* ===========================
+       PI CARD
+    =========================== */
+
+    .pi-card {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      max-width: 1200px;
+      margin: 0 auto 70px;
+
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 32px 44px;
+
+      box-shadow: 0 14px 36px rgba(28, 39, 51, 0.08);
+    }
+
+    .pi-card img {
+      width: 300px;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 16px;
+      flex-shrink: 0;
+    }
+
+    .pi-info h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      margin: 0 0 4px;
+      font-size: 2.2rem;
+      color: var(--ink);
+    }
+
+    .pi-role {
+      color: var(--purple);
+      font-size: 1.25rem;
+      font-weight: 650;
+      margin: 6px 0 18px;
+      letter-spacing: 0.2px;
+    }
+
+    .pi-info p {
+      margin-bottom: 12px;
+      line-height: 1.7;
+      color: #3d4652;
+    }
+
+    .contact-box {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-box p {
+      margin: 6px 0;
+      color: #3d4652;
+      line-height: 1.6;
+    }
+
+    .contact-box a {
+      color: var(--purple);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-box a:hover,
+    .contact-box a:focus-visible {
+      text-decoration: underline;
+    }
+
+    /* ===========================
+       CURRENT MEMBERS
+    =========================== */
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .person-card {
+      display: flex;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 26px rgba(28, 39, 51, 0.07);
+      min-height: 290px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .person-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px rgba(28, 39, 51, 0.11);
+    }
+
+    .person-card img {
+      width: 210px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .person-info {
+      padding: 28px;
+      flex: 1;
+    }
+
+    .person-info h3 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      margin: 0;
+      font-size: 1.4rem;
+      color: var(--ink);
+    }
+
+    .person-role {
+      color: var(--purple);
+      font-weight: 700;
+      margin: 10px 0 16px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .person-info p {
+      margin: 0;
+      line-height: 1.7;
+      color: #3d4652;
+    }
+
+    /* ===========================
+       ALUMNI
+    =========================== */
+
+    .alumni-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .alumni-grid .person-card {
+      min-height: 0;
+    }
+
+    @media (max-width: 1100px) {
+      .alumni-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===========================
+       MOBILE
+    =========================== */
+
+    @media (max-width: 1100px) {
+      .people-grid { grid-template-columns: 1fr; }
+
+      .pi-card { flex-direction: column; padding: 28px; }
+      .pi-card img { width: 100%; height: 340px; }
+
+      .person-card { flex-direction: column; }
+      .person-card img { width: 100%; height: 300px; }
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--purple);
+      outline-offset: 2px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .person-card { transition: none; }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -20,414 +227,183 @@
       </nav>
     </div>
   </header>
-<main class="section">
 
-<div class="people-container">
+  <main class="section people-page">
+    <div class="people-container">
 
-    <!-- ===========================
-         PRINCIPAL INVESTIGATOR
-    ============================ -->
+      <!-- ===========================
+           PRINCIPAL INVESTIGATOR
+      ============================ -->
 
-    <section class="pi-card">
+      <section class="pi-card">
 
         <img src="zhang.jpeg" alt="Dr. Fan Zhang">
 
         <div class="pi-info">
 
-            <h1>Dr. Fan Zhang</h1>
+          <h1>Dr. Fan Zhang</h1>
 
-          <div style="
-    color:#461D7C;
-    font-size:1.3rem;
-    font-weight:650;
-    margin:8px 0 18px;
-    letter-spacing:0.2px;
-">
-    Assistant Professor
-</div>
+          <div class="pi-role">
+            Assistant Professor
+          </div>
 
-            <p>
-                Dr. Zhang is an Assistant Professor in the Department of Biological Sciences at Louisiana State University. The laboratory studies how naturally associated microbes regulate host fitness, endocrine signaling, and aging using <i>Caenorhabditis elegans</i> as a genetically tractable model.
+          <p>
+            Dr. Zhang is an Assistant Professor in the Department of Biological Sciences at Louisiana State University. The laboratory studies how naturally associated microbes regulate host fitness, endocrine signaling, and aging using <i>Caenorhabditis elegans</i> as a genetically tractable model.
+          </p>
+
+          <div class="contact-box">
+
+            <p><strong>Email:</strong>
+              <a href="mailto:fanzhang@lsu.edu">
+                fanzhang@lsu.edu
+              </a>
             </p>
 
-            <div class="contact-box">
+            <p>
+              <strong>Office:</strong><br>
+              478 Our Lady of the Lake Health Interdisciplinary Science Building
+            </p>
 
-                <p><strong>Email:</strong>
-                    <a href="mailto:fanzhang@lsu.edu">
-                        fanzhang@lsu.edu
-                    </a>
-                </p>
+            <p>
+              <strong>Lab:</strong><br>
+              405 Our Lady of the Lake Health Interdisciplinary Science Building
+            </p>
 
-                <p>
-                    <strong>Office:</strong><br>
-                    478 Our Lady of the Lake Health Interdisciplinary Science Building
-                </p>
-
-                <p>
-                    <strong>Lab:</strong><br>
-                    405 Our Lady of the Lake Health Interdisciplinary Science Building
-                </p>
-
-            </div>
+          </div>
 
         </div>
 
-    </section>
+      </section>
 
 
-    <h2 class="section-title">
+      <h2 class="section-title">
         Current Members
-    </h2>
+      </h2>
 
-    <div class="people-grid">
-      <div class="person-card">
+      <div class="people-grid">
 
-    <img src="victoria.jpg" alt="Victoria Rodriguez">
-
-    <div class="person-info">
-
-        <h3>Victoria Rodriguez</h3>
-
-        <div class="person-role">
-            Ph.D. Student
+        <div class="person-card">
+          <img src="victoria.jpg" alt="Victoria Rodriguez">
+          <div class="person-info">
+            <h3>Victoria Rodriguez</h3>
+            <div class="person-role">Ph.D. Student</div>
+            <p>
+              I am a Ph.D. student in Biochemistry at Louisiana State University in Dr. Fan Zhang's lab. My research uses <i>Caenorhabditis elegans</i> to study how environmentally persistent free radicals (EPFRs) affect oxidative stress, mitochondrial function, and aging. I am interested in understanding how environmental exposures impact organismal health and contribute to long-term physiological changes.
+            </p>
+          </div>
         </div>
 
-        <p>
-            I am a Ph.D. student in Biochemistry at Louisiana State University in Dr. Fan Zhang's lab. My research uses <i>Caenorhabditis elegans</i> to study how environmentally persistent free radicals (EPFRs) affect oxidative stress, mitochondrial function, and aging. I am interested in understanding how environmental exposures impact organismal health and contribute to long-term physiological changes.
-        </p>
-
-    </div>
-
-</div>
-      <div class="person-card">
-
-    <img src="gabbie1.jpg" alt="Gabbie Dietel">
-
-    <div class="person-info">
-
-        <h3>Gabbie Dietel</h3>
-
-        <div class="person-role">
-            Research Associate
+        <div class="person-card">
+          <img src="gabbie1.jpg" alt="Gabbie Dietel">
+          <div class="person-info">
+            <h3>Gabbie Dietel</h3>
+            <div class="person-role">Research Associate</div>
+            <p>
+              I graduated from the University of Louisiana at Lafayette in December 2024 with a Bachelor of Science in Biology where I discovered and fostered my passion for research and microbiology. Currently, I am working on the effects of modulating <i>C. elegans</i> diet to identify an Insulin/Insulin-like Signaling (IIS) antagonist in humans.
+            </p>
+          </div>
         </div>
 
-        <p>
-            I graduated from the University of Louisiana at Lafayette in December 2024 with a Bachelor of Science in Biology where I discovered and fostered my passion for research and microbiology. Currently, I am working on the effects of modulating <i>C. elegans</i> diet to identify an Insulin/Insulin-like Signaling (IIS) antagonist in humans.
-        </p>
-
-    </div>
-
-</div>
-      <div class="person-card">
-
-    <img src="briana.jpg" alt="Briana Elisa Barnum">
-
-    <div class="person-info">
-
-        <h3>Briana Elisa Barnum</h3>
-
-        <div class="person-role">
-            Post-baccalaureate Researcher
+        <div class="person-card">
+          <img src="briana.jpg" alt="Briana Elisa Barnum">
+          <div class="person-info">
+            <h3>Briana Elisa Barnum</h3>
+            <div class="person-role">Post-baccalaureate Researcher</div>
+            <p>
+              Greetings! I am a recent graduate from Louisiana State University receiving a Bachelor of Science in Biological Sciences. I am currently a post-baccalaureate researcher in Dr. Fan Zhang's Lab where I investigate the impacts of environmental pollutants on health and aging in <i>Caenorhabditis elegans</i>. I spend my free time practicing my faith in Christ, watching anime, and singing.
+            </p>
+          </div>
         </div>
 
-        <p>
-            Greetings! I am a recent graduate from Louisiana State University receiving a Bachelor of Science in Biological Sciences. I am currently a post-baccalaureate researcher in Dr. Fan Zhang's Lab where I investigate the impacts of environmental pollutants on health and aging in <i>Caenorhabditis elegans</i>. I spend my free time practicing my faith in Christ, watching anime, and singing.
-        </p>
-
-    </div>
-
-</div>
-      <div class="person-card">
-
-    <img src="asalah.jpg" alt="Asalah Kasem">
-
-    <div class="person-info">
-
-        <h3>Asalah Kasem</h3>
-
-        <div class="person-role">
-            Undergraduate Research Associate
+        <div class="person-card">
+          <img src="asalah.jpg" alt="Asalah Kasem">
+          <div class="person-info">
+            <h3>Asalah Kasem</h3>
+            <div class="person-role">Undergraduate Research Associate</div>
+            <p>
+              I am a senior majoring in Biological Sciences and English. In the lab I help compare the effects of oxidative stress and nanoparticle exposure on gene expression of <i>Caenorhabditis elegans</i> and assist with lab maintenance. When I get the time, I enjoy binge reading books and writing.
+            </p>
+          </div>
         </div>
 
-        <p>
-            I am a senior majoring in Biological Sciences and English. In the lab I help compare the effects of oxidative stress and nanoparticle exposure on gene expression of <i>Caenorhabditis elegans</i> and assist with lab maintenance. When I get the time, I enjoy binge reading books and writing.
-        </p>
-
-    </div>
-
-</div>
       </div>
-<h2 class="section-title">Alumni</h2>
 
-<div class="alumni-grid">
-  <div class="person-card">
+      <h2 class="section-title">Alumni</h2>
 
-    <img src="mina.jpg" alt="Mina Sheikh">
+      <div class="alumni-grid">
 
-    <div class="person-info">
+        <div class="person-card">
+          <img src="mina.jpg" alt="Mina Sheikh">
+          <div class="person-info">
+            <h3>Mina Sheikh</h3>
+            <p>
+              I am a senior majoring in Biological Sciences and my goal is to attend medical school after graduation. I'm a student of the Ogden Honors College and pursued my Honors Thesis in the Zhang Lab. Apart from my academic pursuits, I enjoy running and photography.
+            </p>
+          </div>
+        </div>
 
-        <h3>Mina Sheikh</h3>
+        <div class="person-card">
+          <img src="molly.jpg" alt="Molly Dreznick">
+          <div class="person-info">
+            <h3>Molly Dreznick</h3>
+            <p>
+              I am a sophomore (soon to be junior!) in Honors hoping to major in microbiology and minor in international studies. I perform lab maintenance and other tasks such as worm picking and data collection when needed. Besides lab work, I also use my hands to fight people in chess and grip rocks on a rock-climbing wall.
+            </p>
+          </div>
+        </div>
 
-        <p>
-            I am a senior majoring in Biological Sciences and my goal is to attend medical school after graduation. I'm a student of the Ogden Honors College and pursued my Honors Thesis in the Zhang Lab. Apart from my academic pursuits, I enjoy running and photography.
-        </p>
+        <div class="person-card">
+          <img src="estev.png" alt="Emma Stevens">
+          <div class="person-info">
+            <h3>Emma Stevens</h3>
+            <p>
+              I am a senior majoring in Biological Sciences and Music. After graduation, I will be moving to Chicago to work as a Manufacturing Coordinator (QA, Operations, and R&D) in the food processing industry. In the lab, I worked to record and quantify <i>C. elegans</i> lifespan, reproduction, and internal egg hatching.
+            </p>
+          </div>
+        </div>
 
-    </div>
+        <div class="person-card">
+          <img src="emily.jpg" alt="Emily Clemens">
+          <div class="person-info">
+            <h3>Emily Clemens</h3>
+            <p>
+              I am a senior majoring in Microbiology. I plan on attending perfusion school after graduation. While in the lab, I handled worm picking, reproduction measurements, agar plate preparation, and supported various laboratory tasks.
+            </p>
+          </div>
+        </div>
 
-</div>
-  <div class="person-card">
-
-    <img src="molly.jpg" alt="Molly Dreznick">
-
-    <div class="person-info">
-
-        <h3>Molly Dreznick</h3>
-
-        <p>
-            I am a sophomore (soon to be junior!) in Honors hoping to major in microbiology and minor in international studies. I perform lab maintenance and other tasks such as worm picking and data collection when needed. Besides lab work, I also use my hands to fight people in chess and grip rocks on a rock-climbing wall.
-        </p>
-
-    </div>
-
-</div>
-  <div class="person-card">
-
-    <img src="estev.png" alt="Emma Stevens">
-
-    <div class="person-info">
-
-        <h3>Emma Stevens</h3>
-
-        <p>
-            I am a senior majoring in Biological Sciences and Music. After graduation, I will be moving to Chicago to work as a Manufacturing Coordinator (QA, Operations, and R&D) in the food processing industry. In the lab, I worked to record and quantify <i>C. elegans</i> lifespan, reproduction, and internal egg hatching.
-        </p>
-
-    </div>
-
-</div>
-  <div class="person-card">
-
-    <img src="emily.jpg" alt="Emily Clemens">
-
-    <div class="person-info">
-
-        <h3>Emily Clemens</h3>
-
-        <p>
-            I am a senior majoring in Microbiology. I plan on attending perfusion school after graduation. While in the lab, I handled worm picking, reproduction measurements, agar plate preparation, and supported various laboratory tasks.
-        </p>
+      </div>
 
     </div>
-</div>
-
-</div>
-
-</main>
-</div>
-  <style>
-/* ===========================
-   PEOPLE PAGE
-=========================== */
-
-.people-container{
-    width:min(95%,1600px);
-    margin:0 auto;
-}
-
-/* Section headings */
-.section-title{
-    font-size:2rem;
-    color:#461D7C;
-    margin:70px 0 30px;
-    font-weight:700;
-}
-
-/* ===========================
-   PI CARD
-=========================== */
-
-.pi-card{
-    display:flex;
-    align-items:center;      /* Center image and text vertically */
-    gap:35px;
-
-    max-width:1200px;        /* Nice width without being full-page */
-    margin:0 auto 70px;
-
-    background:#fff;
-    border-radius:24px;
-    padding:30px 40px;       /* Less padding so it isn't so tall */
-
-    box-shadow:0 12px 35px rgba(0,0,0,.08);
-}
-
-.pi-card img{
-    width:300px;
-    height:360px;            /* Fixed height so it doesn't stretch */
-    object-fit:cover;
-    border-radius:20px;
-    flex-shrink:0;
-}
-.role{
-    color:#5E2D82;
-    font-size:1.25rem;
-    font-weight:600;
-    margin:2px 0 16px;   /* was 8px or 10px */
-}
-.pi-info h1{
-    margin:0 0 2px;
-    font-size:2.3rem;
-}
-
-.pi-info p{
-    margin-bottom:12px;
-    line-height:1.6;
-}
-
-.contact-box{
-    margin-top:15px;
-    padding-top:15px;
-}
-
-.contact-box p{
-    margin:4px 0;
-}
-/* ===========================
-   CURRENT MEMBERS
-=========================== */
-
-.people-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:35px;
-}
-
-.person-card{
-    display:flex;
-    background:#fff;
-
-    border-radius:22px;
-
-    overflow:hidden;
-
-    box-shadow:0 10px 28px rgba(0,0,0,.08);
-
-    min-height:290px;
-}
-
-.person-card img{
-    width:210px;
-    object-fit:cover;
-    flex-shrink:0;
-}
-
-.person-info{
-    padding:28px;
-    flex:1;
-}
-
-.person-info h3{
-    margin:0;
-    font-size:1.45rem;
-}
-
-.person-role{
-    color:#461D7C;
-    font-weight:700;
-    margin:10px 0 18px;
-}
-
-.person-info p{
-    margin:0;
-    line-height:1.65;
-}
-
-/* ===========================
-   ALUMNI
-=========================== */
-
-.alumni-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:35px;
-}
-
-@media(max-width:1100px){
-    .alumni-grid{
-        grid-template-columns:1fr;
-    }
-}
-/* ===========================
-   MOBILE
-=========================== */
-
-@media(max-width:1100px){
-
-    .people-grid{
-        grid-template-columns:1fr;
-    }
-
-    .pi-card{
-        flex-direction:column;
-    }
-
-    .pi-card img{
-        width:100%;
-        height:420px;
-    }
-
-    .person-card{
-        flex-direction:column;
-    }
-
-    .person-card img{
-        width:100%;
-        height:350px;
-    }
-
-    .alumni-card{
-        flex-direction:column;
-    }
-
-    .alumni-card img{
-        width:100%;
-        height:260px;
-    }
-}
-    </style>
   </main>
 
   <footer class="site-footer">
-  Zhang Lab © 2026 · Caenorhabditis elegans Research
-</footer>
+    Zhang Lab © 2026 · Caenorhabditis elegans Research
+  </footer>
 
-<style>
-.site-footer {
-  text-align: center;
-  padding: 28px 20px;
-  margin-top: 70px;
-  border-top: 2px solid rgba(90, 11, 146, 0.2);
-  font-family: Arial, sans-serif;
-  font-size: 0.95rem;
-  color: #555;
-  background: #f8f8f8;
-}
-</style>
-          <script>
-document.addEventListener("DOMContentLoaded", function () {
+  <style>
+    .site-footer {
+      text-align: center;
+      padding: 28px 20px;
+      margin-top: 70px;
+      border-top: 2px solid rgba(70, 29, 124, 0.2);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: #555;
+      background: #faf8fb;
+    }
+  </style>
 
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".site-nav");
-
-  if (toggle && nav) {
-
-    toggle.addEventListener("click", function () {
-      nav.classList.toggle("show");
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector(".nav-toggle");
+      const nav = document.querySelector(".site-nav");
+      if (toggle && nav) {
+        toggle.addEventListener("click", function () {
+          nav.classList.toggle("show");
+        });
+      }
     });
-
-  }
-
-});
-</script>
+  </script>
 </body>
 </html>
