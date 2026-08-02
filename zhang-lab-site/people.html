@@ -32,45 +32,31 @@
 
         <img src="zhang.jpeg" alt="Dr. Fan Zhang">
 
-        <div class="pi-info">
+    <div class="pi-section">
 
-            <h1>Dr. Fan Zhang</h1>
+    <div class="pi-photo">
+        <img src="zhang.jpeg" alt="Dr. Fan Zhang">
+    </div>
 
-          <div style="
-    color:#461D7C;
-    font-size:1.3rem;
-    font-weight:650;
-    margin:8px 0 18px;
-    letter-spacing:0.2px;
-">
-    Assistant Professor
-</div>
+    <div class="pi-card">
 
-            <p>
-                Dr. Zhang is an Assistant Professor in the Department of Biological Sciences at Louisiana State University. The laboratory studies how naturally associated microbes regulate host fitness, endocrine signaling, and aging using <i>Caenorhabditis elegans</i> as a genetically tractable model.
-            </p>
+        <h1>Dr. Fan Zhang</h1>
 
-            <div class="contact-box">
+        <div class="pi-role">Assistant Professor</div>
 
-                <p><strong>Email:</strong>
-                    <a href="mailto:fanzhang@lsu.edu">
-                        fanzhang@lsu.edu
-                    </a>
-                </p>
+        <p>
+            Dr. Zhang is an Assistant Professor...
+        </p>
 
-                <p>
-                    <strong>Office:</strong><br>
-                    478 Our Lady of the Lake Health Interdisciplinary Science Building
-                </p>
-
-                <p>
-                    <strong>Lab:</strong><br>
-                    405 Our Lady of the Lake Health Interdisciplinary Science Building
-                </p>
-
-            </div>
-
+        <div class="contact-box">
+            <p><strong>Email:</strong> fanzhang@lsu.edu</p>
+            <p><strong>Office:</strong> 478 Our Lady of the Lake Health Interdisciplinary Science Building</p>
+            <p><strong>Lab:</strong> 405 Our Lady of the Lake Health Interdisciplinary Science Building</p>
         </div>
+
+    </div>
+
+</div>
 
     </section>
 
@@ -246,51 +232,62 @@
    PI CARD
 =========================== */
 
-.pi-card{
+.pi-section{
     display:flex;
-    align-items:center;      /* Center image and text vertically */
-    gap:35px;
-
-    max-width:1200px;        /* Nice width without being full-page */
+    align-items:stretch;
+    gap:30px;
+    max-width:1200px;
     margin:0 auto 70px;
-
-    background:#fff;
-    border-radius:24px;
-    padding:30px 40px;       /* Less padding so it isn't so tall */
-
-    box-shadow:0 12px 35px rgba(0,0,0,.08);
 }
 
-.pi-card img{
-    width:300px;
-    height:360px;            /* Fixed height so it doesn't stretch */
-    object-fit:cover;
-    border-radius:20px;
+.pi-photo{
+    width:320px;
     flex-shrink:0;
 }
-.role{
-    color:#5E2D82;
-    font-size:1.25rem;
-    font-weight:600;
-    margin:2px 0 16px;   /* was 8px or 10px */
-}
-.pi-info h1{
-    margin:0 0 2px;
-    font-size:2.3rem;
+
+.pi-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:22px;
 }
 
-.pi-info p{
-    margin-bottom:12px;
-    line-height:1.6;
+.pi-card{
+    flex:1;
+    background:#f4f4f4;
+    border-radius:22px;
+    padding:35px 40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.pi-card h1{
+    margin:0;
+    font-size:2.2rem;
+    color:#111;
+}
+
+.pi-role{
+    color:#5E2D82;
+    font-size:1.2rem;
+    font-weight:600;
+    margin:4px 0 18px;
+}
+
+.pi-card p{
+    line-height:1.7;
+    margin-bottom:16px;
 }
 
 .contact-box{
-    margin-top:15px;
-    padding-top:15px;
+    margin-top:12px;
+    padding-top:16px;
+    border-top:1px solid #d9d9d9;
 }
 
 .contact-box p{
-    margin:4px 0;
+    margin:5px 0;
 }
 /* ===========================
    CURRENT MEMBERS
