@@ -11,12 +11,12 @@
   <style>
     :root {
       --ink: #1c2733;
-      --sand: #f2f3ee;
+      --sand: #ffffff;
       --moss: #2f4a63;
       --moss-dark: #1c2f42;
-      --clay: #9c8a3f;
+      --clay: #461d7c;
       --line: rgba(28, 39, 51, 0.14);
-      --card-bg: #fbfbf8;
+      --card-bg: #ffffff;
     }
 
     * { box-sizing: border-box; }
@@ -137,9 +137,9 @@
     }
 
     .area-figures figure,
-    .research-area > figure {
+    .research-area article > figure {
       margin: 40px auto 0;
-      max-width: 820px;
+      max-width: 700px;
     }
 
     .area-figures figure {
@@ -148,10 +148,14 @@
     }
 
     .area-figures img,
-    .research-area > figure img {
+    .research-area article > figure img {
       width: 100%;
+      max-height: 480px;
+      object-fit: contain;
       display: block;
+      margin: 0 auto;
       border-radius: 6px;
+      background: #fff;
       box-shadow: 0 14px 32px rgba(28, 39, 51, 0.12);
     }
 
@@ -308,11 +312,11 @@
       text-align: center;
       padding: 28px 20px;
       margin-top: 40px;
-      border-top: 2px solid rgba(47, 74, 99, 0.25);
+      border-top: 2px solid rgba(70, 29, 124, 0.2);
       font-family: 'Inter', sans-serif;
       font-size: 0.95rem;
       color: #555;
-      background: #ecedea;
+      background: #faf8fb;
     }
   </style>
 
