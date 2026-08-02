@@ -153,12 +153,12 @@
       </div>
 <h2 class="section-title">Alumni</h2>
 
-<div class="alumni-list">
-  <div class="alumni-card">
+<div class="alumni-grid">
+  <div class="person-card">
 
     <img src="mina.jpg" alt="Mina Sheikh">
 
-    <div class="alumni-info">
+    <div class="person-info">
 
         <h3>Mina Sheikh</h3>
 
@@ -169,11 +169,11 @@
     </div>
 
 </div>
-  <div class="alumni-card">
+  <div class="person-card">
 
     <img src="molly.jpg" alt="Molly Dreznick">
 
-    <div class="alumni-info">
+    <div class="person-info">
 
         <h3>Molly Dreznick</h3>
 
@@ -184,11 +184,11 @@
     </div>
 
 </div>
-  <div class="alumni-card">
+  <div class="person-card">
 
     <img src="estev.png" alt="Emma Stevens">
 
-    <div class="alumni-info">
+    <div class="person-info">
 
         <h3>Emma Stevens</h3>
 
@@ -199,11 +199,11 @@
     </div>
 
 </div>
-  <div class="alumni-card">
+  <div class="person-card">
 
     <img src="emily.jpg" alt="Emily Clemens">
 
-    <div class="alumni-info">
+    <div class="person-info">
 
         <h3>Emily Clemens</h3>
 
@@ -342,35 +342,17 @@
    ALUMNI
 =========================== */
 
-.alumni-list{
-    display:flex;
-    flex-direction:column;
-    gap:30px;
+.alumni-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
 }
 
-.alumni-card{
-    display:flex;
-    background:#fff;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
+@media(max-width:1100px){
+    .alumni-grid{
+        grid-template-columns:1fr;
+    }
 }
-
-.alumni-card img{
-    width:170px;
-    object-fit:cover;
-    flex-shrink:0;
-}
-
-.alumni-info{
-    padding:25px;
-}
-
-.alumni-info h3{
-    margin-top:0;
-    margin-bottom:10px;
-}
-
 /* ===========================
    MOBILE
 =========================== */
