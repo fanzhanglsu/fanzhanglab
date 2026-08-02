@@ -242,22 +242,24 @@
 
 .pi-card{
     display:flex;
-    gap:40px;
-    align-items:stretch;
+    align-items:center;      /* Center image and text vertically */
+    gap:35px;
+
+    max-width:1200px;        /* Nice width without being full-page */
+    margin:0 auto 70px;
 
     background:#fff;
     border-radius:24px;
-    padding:40px;
+    padding:30px 40px;       /* Less padding so it isn't so tall */
 
     box-shadow:0 12px 35px rgba(0,0,0,.08);
-
-    margin-bottom:70px;
 }
 
 .pi-card img{
-    width:340px;
-    border-radius:20px;
+    width:300px;
+    height:360px;            /* Fixed height so it doesn't stretch */
     object-fit:cover;
+    border-radius:20px;
     flex-shrink:0;
 }
 
@@ -265,29 +267,19 @@
     flex:1;
 }
 
-.pi-info h1{
-    margin:0;
-    font-size:2.3rem;
-}
-
-.role{
-    color:#461D7C;
-    font-size:1.2rem;
-    font-weight:700;
-    margin:10px 0 20px;
+.pi-info p{
+    margin-bottom:12px;
+    line-height:1.6;
 }
 
 .contact-box{
-    margin-top:25px;
-    padding-top:20px;
-    border-top:1px solid #ddd;
+    margin-top:15px;
+    padding-top:15px;
 }
 
 .contact-box p{
-    margin:8px 0;
-    line-height:1.5;
+    margin:4px 0;
 }
-
 /* ===========================
    CURRENT MEMBERS
 =========================== */
