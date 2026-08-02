@@ -4,7 +4,234 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>News | Zhang Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --ink: #1c2733;
+      --purple: #461D7C;
+      --line: rgba(70, 29, 124, 0.14);
+      --card-bg: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    .news-page {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--ink);
+      background: #ffffff;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    .news-hero {
+      text-align: center;
+      padding: 56px 0 0;
+    }
+
+    .news-hero h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(32px, 4.5vw, 44px);
+      color: var(--ink);
+      margin: 0 0 20px;
+    }
+
+    .news-rule {
+      width: 100%;
+      max-width: 220px;
+      height: 10px;
+      margin: 0 auto 8px;
+      background-image: radial-gradient(circle, var(--purple) 2px, transparent 2.5px);
+      background-size: 14px 10px;
+      background-repeat: repeat-x;
+      opacity: 0.8;
+    }
+
+    /* ---------- YEAR NAV ---------- */
+    .year-nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: #ffffff;
+      padding: 22px 0;
+      margin: 10px 0 20px;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .year-nav.scrolled {
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 6px 16px rgba(28, 39, 51, 0.05);
+    }
+
+    .year-nav a {
+      text-decoration: none;
+      background: var(--purple);
+      color: white;
+      padding: 9px 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: 0.2s ease;
+    }
+
+    .year-nav a:hover,
+    .year-nav a:focus-visible {
+      background: #33165c;
+      transform: translateY(-2px);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* ---------- STACK / CARDS ---------- */
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      padding-bottom: 70px;
+    }
+
+    .card {
+      scroll-margin-top: 90px;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 40px clamp(24px, 5vw, 52px);
+      box-shadow: 0 8px 22px rgba(28, 39, 51, 0.06);
+    }
+
+    .card .meta {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--purple);
+      margin: 0 0 24px;
+    }
+
+    .card h2 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 28px 0 12px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .card h2:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .card ul {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .card li {
+      line-height: 1.75;
+      color: #3d4652;
+      margin-bottom: 10px;
+      font-size: 0.98rem;
+    }
+
+    .card li:last-child {
+      margin-bottom: 0;
+    }
+
+    .card em {
+      color: var(--ink);
+      font-style: italic;
+    }
+
+    /* ---------- INLINE IMAGE BLOCKS ---------- */
+    .news-figures {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      margin: 26px 0;
+      flex-wrap: wrap;
+    }
+
+    .news-figures img {
+      width: 48%;
+      min-width: 220px;
+      flex: 1 1 260px;
+      max-width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(28, 39, 51, 0.10);
+      display: block;
+    }
+
+    .news-figure-single {
+      text-align: center;
+      margin: 26px 0;
+    }
+
+    .news-figure-single img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(28, 39, 51, 0.10);
+      object-fit: cover;
+    }
+
+    /* ---------- MOBILE ---------- */
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+
+      .stack { gap: 18px; }
+
+      .card {
+        padding: 28px 22px;
+        border-radius: 16px;
+      }
+
+      .card .meta { font-size: 1.6rem; }
+
+      .card h2 { font-size: 1.1rem; }
+
+      .card li { font-size: 0.95rem; }
+
+      .news-figures {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .news-figures img {
+        width: 100%;
+        min-width: 0;
+        height: 200px;
+      }
+
+      .news-figure-single img {
+        max-width: 100%;
+      }
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--purple);
+      outline-offset: 2px;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -20,332 +247,267 @@
       </nav>
     </div>
   </header>
- <main class="section">
-   <div class="container">
+
+  <main class="section news-page">
+    <div class="container">
+
+      <div class="news-hero">
         <h1>News</h1>
-     <div class="year-nav">
-    <a href="#2026">2026</a>
-    <a href="#2025">2025</a>
-    <a href="#2024">2024</a>
-    <a href="#2023">2023</a>
-    <a href="#2022">2022</a>
-</div>
+        <div class="news-rule" role="presentation"></div>
+      </div>
+
+      <div class="year-nav">
+        <a href="#2026">2026</a>
+        <a href="#2025">2025</a>
+        <a href="#2024">2024</a>
+        <a href="#2023">2023</a>
+        <a href="#2022">2022</a>
+      </div>
+
       <div class="stack">
+
         <article class="card" id="2026">
           <p class="meta">2026</p>
+
           <h2>May 2026</h2>
           <ul>
             <li>Maggie Cheng joined the lab as an Undergrauate Research Assistant. Welcome, Maggie!</li>
             <li>Our paper, <em>"Natural commensals induce internal egg hatching in C. elegans</em> was accepted in <em>Microbiology Spectrum.</em> Congratulations to Nora, Mina, Victoria, and Jennifer. Many thanks for funding support from NIGMS!</li>
             <li>Breanna Zhu from Baton Rouge Magnet High joined the lab as a high school student researcher. Welcome, Breanna!</li>
           </ul>
+
           <h2>April 2026</h2>
           <ul>
             <li>Molly received the Amborski Undergraduate Award, and Briana received the Outstanding Senior in Biochemistry Award. Congratulations to both on these outstanding achievements!</li>
-          <div style="
-    max-width:900px;
-    margin:60px auto;
-    padding:0 20px;
-">
+          </ul>
 
-    <div style="
-        display:flex;
-        flex-direction:row;
-        gap:20px;
-        justify-content:center;
-        align-items:center;
-    ">
+          <figure class="news-figures">
+            <img src="discoverB.jpg" alt="Discover B">
+            <img src="DB.jpg" alt="DB">
+          </figure>
 
-        <!-- LEFT IMAGE -->
-        <img src="discoverB.jpg" alt="Discover B" style="
-            width:48%;
-            height:240px;
-            object-fit:cover;
-            border-radius:16px;
-            box-shadow:0 8px 20px rgba(0,0,0,0.10);
-        ">
-
-        <!-- RIGHT IMAGE -->
-        <img src="DB.jpg" alt="DB" style="
-            width:48%;
-            height:240px;
-            object-fit:cover;
-            border-radius:16px;
-            box-shadow:0 8px 20px rgba(0,0,0,0.10);
-        ">
-
-    </div>
-</div>
+          <ul>
             <li>Molly and Briana presented their research at the LSU Discover Day Undergraduate Research and Creativity Conference.</li>
             <li>Molly and Briana successfully defended their Honors Theses. Congratulations, Molly and Briana, on this important milestone!</li>
           </ul>
+
           <h2>March 2026</h2>
           <ul>
             <li>The Zhang Lab relocated to the new Our Lady of the Lake Health Interdisciplinary Science Building and is now located in the fourth-floor open laboratory space, Room 405.</li>
-            <li>Our Paper, <em>“Shifts in soil microbiome surrounding a thermal treatment facility for hazardous waste: the hidden impact of environmentally persistent free radicals,”</em> was published in <em>Environmental Science: Processes & Impacts.</em> Congratulations to Nora and Aiyannah, and many thanks to our collaborators in the LSU Superfund Research Program!</li>
-          </ul> 
+            <li>Our Paper, <em>"Shifts in soil microbiome surrounding a thermal treatment facility for hazardous waste: the hidden impact of environmentally persistent free radicals,"</em> was published in <em>Environmental Science: Processes & Impacts.</em> Congratulations to Nora and Aiyannah, and many thanks to our collaborators in the LSU Superfund Research Program!</li>
+          </ul>
         </article>
+
         <article class="card" id="2025">
           <p class="meta">2025</p>
+
           <h2>December 2025</h2>
           <ul>
-            <li>Fan presented a seminar, <em>“Endocrine regulation through host–microbe interactions: a C. elegans microbiome perspective,”</em> at the Institute of Marine and Environmental Technology, University of Maryland Center for Environmental Sciences. Many thanks to Dr. Russell Hill for hosting!</li>
+            <li>Fan presented a seminar, <em>"Endocrine regulation through host–microbe interactions: a C. elegans microbiome perspective,"</em> at the Institute of Marine and Environmental Technology, University of Maryland Center for Environmental Sciences. Many thanks to Dr. Russell Hill for hosting!</li>
             <li>Fan presented a talk on bacteria-induced internal egg hatching, and Victoria presented <em>"Investigating the Impact of EPRs on Stress Physiology and Lifespan in C. elegans"</em> at the Monthly Bacterial Pathogenesis and Host Response Interest Group meeting.</li>
           </ul>
+
           <h2>November 2025</h2>
           <ul>
-            <li>Nora successfully defended her Master’s thesis. Congratulations, Nora, on this accomplishment!</li>
-            <li>Victoria Rodriguez presented her departmental entrance seminar, <em>“Investigating the Impact of EPFRs on Stress Physiology and Lifespan in C. elegans,”</em> and successfully passed her qualifying exam. Congratulations, Victoria!</li>
+            <li>Nora successfully defended her Master's thesis. Congratulations, Nora, on this accomplishment!</li>
+            <li>Victoria Rodriguez presented her departmental entrance seminar, <em>"Investigating the Impact of EPFRs on Stress Physiology and Lifespan in C. elegans,"</em> and successfully passed her qualifying exam. Congratulations, Victoria!</li>
           </ul>
+
           <h2>October 2025</h2>
           <ul>
             <li>Gabbie Dietel joined the lab as a Research Associate. Welcome, Gabbie!</li>
           </ul>
+
           <h2>September 2025</h2>
           <ul>
             <li>Briana Barnum joined the lab as an Undergraduate Research Assistant. Welcome, Briana!</li>
             <li>Asalah Kasem joined the lab as an Undergraduate Research Assistant. Welcome, Asalah!</li>
             <li>Davida Tsolenyanu joined the lab as an Undergraduate Research Assistant. Welcome, Davida!</li>
-          </ul>           
+          </ul>
+
           <h2>August 2025</h2>
           <ul>
-            <li>The Zhang Lab received an NIH NIGMS R35 award for the project <em>“Microbial modulation of endocrine signaling in C. elegans.”</em></li>
-          </ul>    
+            <li>The Zhang Lab received an NIH NIGMS R35 award for the project <em>"Microbial modulation of endocrine signaling in C. elegans."</em></li>
+          </ul>
+
           <h2>July 2025</h2>
           <ul>
             <li>Nora and Victoria presented their research at the International Worm Meeting at the University of California, Davis.</li>
             <li>Brandon Yan from St. Michael the Archangel High School joined the lab as a high school student researcher. Welcome, Brandon!</li>
-          </ul>     
+          </ul>
+
           <h2>May 2025</h2>
           <ul>
             <li>David Dickerson from Episcopal Private School joined the lab as a high school student researcher. Welcome, David!</li>
-          </ul>    
+          </ul>
+
           <h2>January 2025</h2>
           <ul>
             <li>Debi Ganguly joined the lab as an Undergraduate Research Assistant. Welcome, Debi!</li>
-          </ul>          
+          </ul>
         </article>
+
         <article class="card" id="2024">
           <p class="meta">2024</p>
-        <h2>December 2024</h2>
-        <ul>
-          <li>Taylor successfully defended their Honors Thesis. Congratulations, Taylor, on this outstanding achievement!</li>
-          <li>Nora presented her departmental entrance seminar, <em>“Bacteria-Induced Internal Egg Hatching in Caenorhabditis elegans</em>,” and successfully passed her qualifying exam. Congratulations, Nora!</li>
-        </ul>
-        <h2>November 2024</h2>
-        <ul>
-          <li>Fan presented a seminar, <em>“Microbial Influences on Host Fitness: Insights from the <em>Caenorhabditis elegans</em> Microbiome,”</em> for the Comparative Biomedical Sciences program at the School of Veterinary Medicine. Many thanks to Dr. Alex Noel for hosting!</li>
-        </ul>
-        <h2>August 2024</h2>
-        <ul>
-          <li>Victoria Rodriguez joined the lab and began her Ph.D. program. Welcome, Victoria!</li>
-          <li>Fan received an SEC Faculty Travel Award to support collaborative research with Dr. Xin Wang’s group at the University of Florida.</li>
-        </ul>
-        <h2>July 2024</h2>
-        <ul>
-          <li>Nora presented a poster on bacteria-induced internal egg hatching in <em>C. elegans</em> at the <em>C. elegans Metabolism, Aging, Pathogenesis, Stress and Small RNAs</em> meeting at the University of Wisconsin–Madison.</li>
-        </ul>
-        <h2>June 2024</h2>
-        <ul>
-          <li>Fan presented a talk, <em>“High-throughput Analysis of Microbial Influence on the Soil Nematode <em>C. elegans</em>,”</em> at the <em>Duckweeds, Microbes, and Symbiosis</em> meeting in Vancouver, Canada. Many thanks to Dr. Megan Frederickson for the invitation!</li>
-          <li>Fan also presented a talk, <em>“Natural Microbes Modulate the Reproduction and Lifespan Trade-off in <em>C. elegans</em>,”</em> at the Canadian Society for Ecology and Evolution (CSEE) meeting in Vancouver, Canada.</li>
-        </ul>
-        <h2>May 2024</h2>
-        <ul>
-          <li>The Zhang Lab received a Louisiana Board of Regents award for the project, <em>“Unlocking the Remedial Potential of Soil Microbiomes Near a Hazardous Waste Thermal Treatment Site.”</em> Many thanks to the Louisiana Board of Regents and collaborators from the LSU Superfund Research Program.</li>
-          <li>Nora received the Dr. Richard Bruch Distinguished Graduate Student Scholarship from the department. Congratulations, Nora!</li>
-        </ul>
-      <h2>April 2024</h2>
-      <ul>
-        <li>Mina successfully defended her Honors Thesis. Congratulations, Mina, on this accomplishment!</li>
-        <li>Mina and Emma presented their research at the National Conference on Undergraduate Research in Long Beach, California.</li>
-        <li>Mina and Emma also presented at LSU Discover Day: Undergraduate Research and Creativity Conference.</li>
-        <div style="text-align:center; margin:40px 0;">
-    <img src="2024.jpg" alt="2024" style="
-        width:100%;
-        max-width:350px;
-        border-radius:18px;
-        box-shadow:0 8px 20px rgba(0,0,0,0.10);
-        object-fit:cover;
-    ">
-</div>
-        <li>Nora’s presentation, <em>“Bacteria-Induced Internal Egg Hatching in <em>Caenorhabditis elegans</em>,”</em> was selected for presentation at the Graduate Research Conference. Congratulations, Nora!</li>
-        <li>Blaire D’Aunoy joined the lab as an Undergraduate Research Assistant. Welcome, Blaire!</li>
-      </ul>
-      <h2>March 2024</h2>
-      <ul>
-       <li>Under Nora’s mentorship, Britney Bellino from Kenilworth Science and Technology School earned 1st place at the Louisiana State Science Fair. Congratulations to Britney and Nora!</li>
-      </ul>
-      <h2>February 2024</h2>
-      <ul>
-        <li>Fan was selected as a Service-Learning Scholar by LSU-CCEL to develop service-learning modules for the undergraduate course <em>Microbial Ecology</em>.</li>
-      </ul>
-      <h2>January 2024</h2>
-      <ul>
-        <li>Taylor Rumney joined the lab as an Undergraduate Research Assistant. Welcome, Taylor!</li>
-      </ul>
-    </article>   
-    <article class="card" id="2023">
-  <p class="meta">2023</p>
-      <h2>August 2023</h2>
-      <ul>
-        <li>Nora Villafuerte began her Ph.D. program. Welcome, Nora!</li>
-        <li>Jenny Tran joined the lab as an Undergraduate Research Assistant. Welcome, Jenny!</li>
-        <li>Molly Dreznick joined the lab as an Undergraduate Research Assistant. Welcome, Molly!</li>
-        <li>Emma Stevens joined the lab as an Undergraduate Research Assistant. Welcome, Emma!</li>
-        <li>Emily Clemens joined the lab as an Undergraduate Research Assistant. Welcome, Emily!</li>
-        <li>Will Foster joined the lab as an Undergraduate Research Assistant. Welcome, Will!</li>
-      </ul>
-      <h2>June 2023</h2>
-      <ul>
-        <li>Jennifer Lin from Baton Rouge High joined the lab as a high school student researcher. Welcome, Jennifer!</li>
-        <li>Paige Boudreaux joined the lab as an Undergraduate Research Assistant. Welcome, Paige!</li>
-      </ul>
-      <h2>May 2023</h2>
-      <ul>
-        <li>Nora Villafuerte joined the lab as a Research Associate. Welcome, Nora!</li>
-      </ul>
-      <h2>March 2023</h2>
-      <ul>
-        <li>Aiyanah Sandifer joined the lab as a Research Associate. Welcome, Aiyanah!</li>
-      </ul>
-      <h2>January 2023</h2>
-      <ul>
-        <li>Maha Rehman joined the lab as an Undergraduate Research Assistant. Welcome, Maha!</li>
-      </ul>
-      </article>
-    <article class="card" id="2022">
-  <p class="meta">2022</p>
-      <h2>October 2022</h2>
-      <ul>
-        <li>Mina Sheikh joined the lab as an Undergraduate Research Assistant. Welcome, Mina!</li>
-        <li>Fan presented a seminar, <em>“Soil Nematode C. elegans as a Model for Microbiome Research”</em>, at the LSU School of Veterinary Medicine. Many thanks to Dr. Will Beaver for hosting!</li>
-      </ul>
-      <h2>September 2022</h2>
-      <ul>
-        <li>The Zhang Lab officially opened in the Department of Biological Sciences at Louisiana State University.</li>
-      </ul>
-    </article>
+
+          <h2>December 2024</h2>
+          <ul>
+            <li>Taylor successfully defended their Honors Thesis. Congratulations, Taylor, on this outstanding achievement!</li>
+            <li>Nora presented her departmental entrance seminar, <em>"Bacteria-Induced Internal Egg Hatching in Caenorhabditis elegans</em>," and successfully passed her qualifying exam. Congratulations, Nora!</li>
+          </ul>
+
+          <h2>November 2024</h2>
+          <ul>
+            <li>Fan presented a seminar, <em>"Microbial Influences on Host Fitness: Insights from the <em>Caenorhabditis elegans</em> Microbiome,"</em> for the Comparative Biomedical Sciences program at the School of Veterinary Medicine. Many thanks to Dr. Alex Noel for hosting!</li>
+          </ul>
+
+          <h2>August 2024</h2>
+          <ul>
+            <li>Victoria Rodriguez joined the lab and began her Ph.D. program. Welcome, Victoria!</li>
+            <li>Fan received an SEC Faculty Travel Award to support collaborative research with Dr. Xin Wang's group at the University of Florida.</li>
+          </ul>
+
+          <h2>July 2024</h2>
+          <ul>
+            <li>Nora presented a poster on bacteria-induced internal egg hatching in <em>C. elegans</em> at the <em>C. elegans Metabolism, Aging, Pathogenesis, Stress and Small RNAs</em> meeting at the University of Wisconsin–Madison.</li>
+          </ul>
+
+          <h2>June 2024</h2>
+          <ul>
+            <li>Fan presented a talk, <em>"High-throughput Analysis of Microbial Influence on the Soil Nematode <em>C. elegans</em>,"</em> at the <em>Duckweeds, Microbes, and Symbiosis</em> meeting in Vancouver, Canada. Many thanks to Dr. Megan Frederickson for the invitation!</li>
+            <li>Fan also presented a talk, <em>"Natural Microbes Modulate the Reproduction and Lifespan Trade-off in <em>C. elegans</em>,"</em> at the Canadian Society for Ecology and Evolution (CSEE) meeting in Vancouver, Canada.</li>
+          </ul>
+
+          <h2>May 2024</h2>
+          <ul>
+            <li>The Zhang Lab received a Louisiana Board of Regents award for the project, <em>"Unlocking the Remedial Potential of Soil Microbiomes Near a Hazardous Waste Thermal Treatment Site."</em> Many thanks to the Louisiana Board of Regents and collaborators from the LSU Superfund Research Program.</li>
+            <li>Nora received the Dr. Richard Bruch Distinguished Graduate Student Scholarship from the department. Congratulations, Nora!</li>
+          </ul>
+
+          <h2>April 2024</h2>
+          <ul>
+            <li>Mina successfully defended her Honors Thesis. Congratulations, Mina, on this accomplishment!</li>
+            <li>Mina and Emma presented their research at the National Conference on Undergraduate Research in Long Beach, California.</li>
+            <li>Mina and Emma also presented at LSU Discover Day: Undergraduate Research and Creativity Conference.</li>
+          </ul>
+
+          <figure class="news-figure-single">
+            <img src="2024.jpg" alt="2024">
+          </figure>
+
+          <ul>
+            <li>Nora's presentation, <em>"Bacteria-Induced Internal Egg Hatching in <em>Caenorhabditis elegans</em>,"</em> was selected for presentation at the Graduate Research Conference. Congratulations, Nora!</li>
+            <li>Blaire D'Aunoy joined the lab as an Undergraduate Research Assistant. Welcome, Blaire!</li>
+          </ul>
+
+          <h2>March 2024</h2>
+          <ul>
+            <li>Under Nora's mentorship, Britney Bellino from Kenilworth Science and Technology School earned 1st place at the Louisiana State Science Fair. Congratulations to Britney and Nora!</li>
+          </ul>
+
+          <h2>February 2024</h2>
+          <ul>
+            <li>Fan was selected as a Service-Learning Scholar by LSU-CCEL to develop service-learning modules for the undergraduate course <em>Microbial Ecology</em>.</li>
+          </ul>
+
+          <h2>January 2024</h2>
+          <ul>
+            <li>Taylor Rumney joined the lab as an Undergraduate Research Assistant. Welcome, Taylor!</li>
+          </ul>
+        </article>
+
+        <article class="card" id="2023">
+          <p class="meta">2023</p>
+
+          <h2>August 2023</h2>
+          <ul>
+            <li>Nora Villafuerte began her Ph.D. program. Welcome, Nora!</li>
+            <li>Jenny Tran joined the lab as an Undergraduate Research Assistant. Welcome, Jenny!</li>
+            <li>Molly Dreznick joined the lab as an Undergraduate Research Assistant. Welcome, Molly!</li>
+            <li>Emma Stevens joined the lab as an Undergraduate Research Assistant. Welcome, Emma!</li>
+            <li>Emily Clemens joined the lab as an Undergraduate Research Assistant. Welcome, Emily!</li>
+            <li>Will Foster joined the lab as an Undergraduate Research Assistant. Welcome, Will!</li>
+          </ul>
+
+          <h2>June 2023</h2>
+          <ul>
+            <li>Jennifer Lin from Baton Rouge High joined the lab as a high school student researcher. Welcome, Jennifer!</li>
+            <li>Paige Boudreaux joined the lab as an Undergraduate Research Assistant. Welcome, Paige!</li>
+          </ul>
+
+          <h2>May 2023</h2>
+          <ul>
+            <li>Nora Villafuerte joined the lab as a Research Associate. Welcome, Nora!</li>
+          </ul>
+
+          <h2>March 2023</h2>
+          <ul>
+            <li>Aiyanah Sandifer joined the lab as a Research Associate. Welcome, Aiyanah!</li>
+          </ul>
+
+          <h2>January 2023</h2>
+          <ul>
+            <li>Maha Rehman joined the lab as an Undergraduate Research Assistant. Welcome, Maha!</li>
+          </ul>
+        </article>
+
+        <article class="card" id="2022">
+          <p class="meta">2022</p>
+
+          <h2>October 2022</h2>
+          <ul>
+            <li>Mina Sheikh joined the lab as an Undergraduate Research Assistant. Welcome, Mina!</li>
+            <li>Fan presented a seminar, <em>"Soil Nematode C. elegans as a Model for Microbiome Research"</em>, at the LSU School of Veterinary Medicine. Many thanks to Dr. Will Beaver for hosting!</li>
+          </ul>
+
+          <h2>September 2022</h2>
+          <ul>
+            <li>The Zhang Lab officially opened in the Department of Biological Sciences at Louisiana State University.</li>
+          </ul>
+        </article>
+
       </div>
- </main>
-<footer class="site-footer">
-  Zhang Lab © 2026 · Caenorhabditis elegans Research
-</footer>
+    </div>
+  </main>
 
-<style>
-  .container{
-    max-width:1400px;
-    margin:0 auto;
-    padding:0 40px;
-}
-.year-nav{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:12px;
-    margin:25px 0 40px;
-}
+  <footer class="site-footer">
+    Zhang Lab © 2026 · Caenorhabditis elegans Research
+  </footer>
 
-.year-nav a{
-    text-decoration:none;
-    background:#5B3FA6;
-    color:white;
-    padding:10px 22px;
-    border-radius:999px;
-    font-weight:600;
-    transition:.25s;
-}
+  <style>
+    .site-footer {
+      text-align: center;
+      padding: 28px 20px;
+      margin-top: 40px;
+      border-top: 2px solid rgba(70, 29, 124, 0.2);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: #555;
+      background: #faf8fb;
+    }
+  </style>
 
-.year-nav a:hover{
-    background:#3D2564;
-    transform:translateY(-2px);
-}
-
-html{
-    scroll-behavior:smooth;
-}
- .year-nav {
-  position: sticky;
-  top: 72px;              /* Just below your main header */
-  z-index: 999;
-
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-
-  background: white;
-  padding: 12px 0;
-
-  border-bottom: none;
-  transition: border-color 0.3s ease;
-}
-  .year-nav.scrolled {
-  border-bottom: 1px solid #e5e5e5;
-}
-/* ---------- MOBILE NEWS FIX ---------- */
-@media (max-width: 768px) {
-
-  .container.narrow {
-    width: 92%;
-    max-width: 100%;
-    padding: 0;
-  }
-
-  .stack {
-    gap: 18px;
-  }
-
-  .card {
-    padding: 20px;
-    border-radius: 18px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .card h2 {
-    font-size: 1.2rem;
-    line-height: 1.3;
-  }
-
-  .card ul {
-    padding-left: 18px;
-    margin: 0;
-  }
-
-  .card li {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 10px;
-  }
-}
-
-</style>
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".site-nav");
-
-  if (toggle && nav) {
-
-    toggle.addEventListener("click", function () {
-      nav.classList.toggle("show");
-    });
-
-  }
-
-});
-</script>
   <script>
-const yearNav = document.querySelector(".year-nav");
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector(".nav-toggle");
+      const nav = document.querySelector(".site-nav");
+      if (toggle && nav) {
+        toggle.addEventListener("click", function () {
+          nav.classList.toggle("show");
+        });
+      }
+    });
+  </script>
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 100) {
-    yearNav.classList.add("scrolled");
-  } else {
-    yearNav.classList.remove("scrolled");
-  }
-});
-</script>
+  <script>
+    const yearNav = document.querySelector(".year-nav");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        yearNav.classList.add("scrolled");
+      } else {
+        yearNav.classList.remove("scrolled");
+      }
+    });
+  </script>
 </body>
 </html>
