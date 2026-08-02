@@ -22,44 +22,45 @@
   </header>
 <main class="section">
 
-<div class="people-container">
+    <div class="people-container">
 
-    <!-- ===========================
-         PRINCIPAL INVESTIGATOR
-    ============================ -->
+        <!-- ===========================
+             PRINCIPAL INVESTIGATOR
+        ============================ -->
 
-    <section class="pi-card">
+        <section class="pi-section">
 
-        <img src="zhang.jpeg" alt="Dr. Fan Zhang">
+            <!-- Photo -->
+            <div class="pi-photo">
+                <img src="zhang.jpeg" alt="Dr. Fan Zhang">
+            </div>
 
-    <div class="pi-section">
+            <!-- Bio Card -->
+            <div class="pi-card">
 
-    <div class="pi-photo">
-        <img src="zhang.jpeg" alt="Dr. Fan Zhang">
-    </div>
+                <h1>Dr. Fan Zhang</h1>
 
-    <div class="pi-card">
+                <div class="pi-role">
+                    Assistant Professor
+                </div>
 
-        <h1>Dr. Fan Zhang</h1>
+                <p>
+                    Dr. Zhang is an Assistant Professor in the Department of Biological Sciences at Louisiana State University. The lab studies how naturally associated microbes regulate host fitness, endocrine signaling, and aging using <em>C. elegans</em> as a genetically tractable model.
+                </p>
 
-        <div class="pi-role">Assistant Professor</div>
+                <div class="contact-box">
+                    <p><strong>Email:</strong> fanzhang@lsu.edu</p>
 
-        <p>
-            Dr. Zhang is an Assistant Professor...
-        </p>
+                    <p><strong>Office:</strong><br>
+                    478 Our Lady of the Lake Health Interdisciplinary Science Building</p>
 
-        <div class="contact-box">
-            <p><strong>Email:</strong> fanzhang@lsu.edu</p>
-            <p><strong>Office:</strong> 478 Our Lady of the Lake Health Interdisciplinary Science Building</p>
-            <p><strong>Lab:</strong> 405 Our Lady of the Lake Health Interdisciplinary Science Building</p>
-        </div>
+                    <p><strong>Lab:</strong><br>
+                    405 Our Lady of the Lake Health Interdisciplinary Science Building</p>
+                </div>
 
-    </div>
+            </div>
 
-</div>
-
-    </section>
-
+        </section>
 
     <h2 class="section-title">
         Current Members
@@ -228,35 +229,31 @@
     font-weight:700;
 }
 
-/* ===========================
-   PI CARD
-=========================== */
-
 .pi-section{
     display:flex;
+    gap:36px;
     align-items:stretch;
-    gap:30px;
-    max-width:1200px;
-    margin:0 auto 70px;
+    max-width:1400px;
+    margin:0 auto 80px;
 }
 
 .pi-photo{
-    width:320px;
-    flex-shrink:0;
+    flex:0 0 380px;
 }
 
 .pi-photo img{
     width:100%;
     height:100%;
     object-fit:cover;
-    border-radius:22px;
+    border-radius:28px;
+    display:block;
 }
 
 .pi-card{
     flex:1;
     background:#f4f4f4;
-    border-radius:22px;
-    padding:35px 40px;
+    border-radius:28px;
+    padding:55px;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -264,30 +261,27 @@
 
 .pi-card h1{
     margin:0;
-    font-size:2.2rem;
-    color:#111;
+    font-size:3.5rem;
 }
 
 .pi-role{
-    color:#5E2D82;
-    font-size:1.2rem;
+    margin:18px 0 36px;
+    color:#4B2E83;
+    font-size:2rem;
     font-weight:600;
-    margin:4px 0 18px;
 }
 
 .pi-card p{
-    line-height:1.7;
-    margin-bottom:16px;
+    font-size:1.25rem;
+    line-height:1.8;
 }
 
 .contact-box{
-    margin-top:12px;
-    padding-top:16px;
-    border-top:1px solid #d9d9d9;
+    margin-top:30px;
 }
 
 .contact-box p{
-    margin:5px 0;
+    margin-bottom:18px;
 }
 /* ===========================
    CURRENT MEMBERS
