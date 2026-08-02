@@ -25,14 +25,14 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 0 40px;
+      padding: 0 32px;
     }
 
     .news-hero {
       text-align: center;
-      padding: 56px 0 0;
+      padding: 36px 0 0;
     }
 
     .news-hero h1 {
@@ -40,7 +40,7 @@
       font-weight: 700;
       font-size: clamp(32px, 4.5vw, 44px);
       color: var(--ink);
-      margin: 0 0 20px;
+      margin: 0 0 8px;
     }
 
     .news-rule {
@@ -57,15 +57,15 @@
     /* ---------- YEAR NAV ---------- */
     .year-nav {
       position: sticky;
-      top: 0;
+      top: 72px;
       z-index: 999;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 14px;
       background: #ffffff;
-      padding: 22px 0;
-      margin: 10px 0 20px;
+      padding: 14px 0;
+      margin: -4px 0 20px;
       border-bottom: 1px solid transparent;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
@@ -79,10 +79,10 @@
       text-decoration: none;
       background: var(--purple);
       color: white;
-      padding: 9px 20px;
+      padding: 13px 28px;
       border-radius: 999px;
       font-weight: 600;
-      font-size: 0.92rem;
+      font-size: 1.05rem;
       transition: 0.2s ease;
     }
 
@@ -96,38 +96,39 @@
       scroll-behavior: smooth;
     }
 
-    /* ---------- STACK / CARDS ---------- */
+    /* ---------- STACK / SECTIONS ---------- */
     .stack {
       display: flex;
       flex-direction: column;
-      gap: 28px;
-      padding-bottom: 70px;
+      gap: 8px;
+      padding-bottom: 50px;
     }
 
     .card {
-      scroll-margin-top: 90px;
-      background: var(--card-bg);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 40px clamp(24px, 5vw, 52px);
-      box-shadow: 0 8px 22px rgba(28, 39, 51, 0.06);
+      scroll-margin-top: 100px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .card:last-child {
+      border-bottom: none;
     }
 
     .card .meta {
       font-family: 'Source Serif 4', Georgia, serif;
       font-weight: 700;
-      font-size: 2rem;
+      font-size: 1.9rem;
       color: var(--purple);
-      margin: 0 0 24px;
+      margin: 0 0 18px;
     }
 
     .card h2 {
       font-family: 'Source Serif 4', Georgia, serif;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 600;
       color: var(--ink);
-      margin: 28px 0 12px;
-      padding-top: 18px;
+      margin: 20px 0 10px;
+      padding-top: 14px;
       border-top: 1px solid var(--line);
     }
 
@@ -143,9 +144,9 @@
     }
 
     .card li {
-      line-height: 1.75;
+      line-height: 1.65;
       color: #3d4652;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       font-size: 0.98rem;
     }
 
@@ -200,11 +201,10 @@
       .stack { gap: 18px; }
 
       .card {
-        padding: 28px 22px;
-        border-radius: 16px;
+        padding: 22px 0;
       }
 
-      .card .meta { font-size: 1.6rem; }
+      .card .meta { font-size: 1.5rem; }
 
       .card h2 { font-size: 1.1rem; }
 
