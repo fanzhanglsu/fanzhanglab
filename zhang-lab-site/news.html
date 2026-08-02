@@ -57,7 +57,7 @@
     /* ---------- YEAR NAV ---------- */
     .year-nav {
       position: sticky;
-      top: 72px;
+      top: var(--header-height, 72px);
       z-index: 999;
       display: flex;
       justify-content: center;
@@ -107,11 +107,6 @@
     .card {
       scroll-margin-top: 100px;
       padding: 32px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .card:last-child {
-      border-bottom: none;
     }
 
     .card .meta {
@@ -500,6 +495,21 @@
   </script>
 
   <script>
+    function setHeaderHeightVar() {
+      const header = document.querySelector(".site-header");
+      if (header) {
+        document.documentElement.style.setProperty(
+          "--header-height",
+          header.getBoundingClientRect().height + "px"
+        );
+      }
+    }
+    setHeaderHeightVar();
+    window.addEventListener("resize", setHeaderHeightVar);
+    window.addEventListener("load", setHeaderHeightVar);
+  </script>
+
+  <script>
     const yearNav = document.querySelector(".year-nav");
     window.addEventListener("scroll", () => {
       if (window.scrollY > 100) {
@@ -511,3 +521,4 @@
   </script>
 </body>
 </html>
+
