@@ -513,13 +513,19 @@
       const hero = document.getElementById("jnHero");
       if (!hero || heroSlides.length === 0) return;
 
+      /* Per-image crop position ("center X%") — tweak individually as needed */
+      const heroSlidePositions = {
+        "group.jpg": "center 50%",
+        "out.png": "center 50%",
+        "photo.jpg": "center 50%",
+        "outs.png": "center 75%"
+      };
+
       heroSlides.forEach((src, i) => {
         const img = document.createElement("img");
         img.src = src;
         img.alt = "Zhang Lab Group";
-        if (src === "out.png" || src === "outs.png") {
-          img.style.objectPosition = "center 75%";
-        }
+        img.style.objectPosition = heroSlidePositions[src] || "center 50%";
         if (i === 0) img.classList.add("jn-slide-active");
         hero.prepend(img);
       });
