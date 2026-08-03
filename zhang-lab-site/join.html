@@ -4,7 +4,198 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Join Us | Zhang Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --ink: #1c2733;
+      --purple: #461D7C;
+      --line: rgba(70, 29, 124, 0.16);
+      --card-bg: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    .join-page {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--ink);
+      background: #ffffff;
+    }
+
+    .jn-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+
+    /* ---------- INTRO ---------- */
+    .jn-hero {
+      text-align: center;
+      padding: 56px 0 40px;
+    }
+
+    .jn-hero h1 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(32px, 4.5vw, 44px);
+      color: var(--purple);
+      margin: 0 0 16px;
+    }
+
+    .jn-rule {
+      width: 70px;
+      height: 3px;
+      background: var(--purple);
+      margin: 0 auto;
+      border-radius: 10px;
+      opacity: 0.85;
+    }
+
+    .jn-intro-row {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      align-items: stretch;
+      margin-bottom: 50px;
+    }
+
+    .jn-intro-card {
+      flex: 1;
+      min-width: 320px;
+      padding: 34px;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 10px 26px rgba(28, 39, 51, 0.06);
+    }
+
+    .jn-intro-card p {
+      font-size: 17px;
+      line-height: 1.75;
+      color: #3d4652;
+      margin: 0 0 18px;
+    }
+
+    .jn-intro-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .jn-intro-img {
+      flex: 1;
+      min-width: 320px;
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 10px 26px rgba(28, 39, 51, 0.06);
+      overflow: hidden;
+      display: flex;
+    }
+
+    .jn-intro-img img {
+      width: 100%;
+      height: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ---------- CARDS ---------- */
+    .jn-card {
+      background: var(--card-bg);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 38px clamp(24px, 4vw, 44px);
+      box-shadow: 0 10px 26px rgba(28, 39, 51, 0.06);
+      margin-bottom: 30px;
+    }
+
+    .jn-card h2 {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--purple);
+      margin: 0 0 18px;
+    }
+
+    .jn-card p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #3d4652;
+      margin: 0 0 16px;
+    }
+
+    .jn-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .jn-card ul {
+      margin: 0 0 16px;
+      padding-left: 22px;
+    }
+
+    .jn-card li {
+      line-height: 1.7;
+      color: #3d4652;
+      margin-bottom: 6px;
+    }
+
+    /* ---------- GRID (grad + postdoc) ---------- */
+    .jn-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      align-items: start;
+    }
+
+    .jn-grid .jn-card {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 900px) {
+      .jn-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ---------- FORM BUTTON ---------- */
+    .jn-form-button-wrap {
+      text-align: center;
+      margin-top: 22px;
+    }
+
+    .jn-form-button {
+      display: inline-block;
+      padding: 13px 26px;
+      background-color: var(--purple);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+
+    .jn-form-button:hover,
+    .jn-form-button:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(70, 29, 124, 0.28);
+      background-color: #33165c;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--purple);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 640px) {
+      .jn-container { padding: 0 22px 60px; }
+      .jn-hero { padding: 40px 0 30px; }
+      .jn-card { padding: 28px 22px; }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -20,232 +211,162 @@
       </nav>
     </div>
   </header>
-  <!-- Intro -->
-<section style="
-    width:100%;
-    padding:70px 20px;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-    color:#2d2d2d;
-">
 
-    <!-- TITLE -->
-    <div style="text-align:center; margin-bottom:45px;">
-        <h1 style="
-            font-size:44px;
-            color:#461D7C;
-            margin:0;
-            font-weight:700;
-        ">
-            Join the Zhang Lab
-        </h1>
+  <main class="section join-page">
+    <div class="jn-container">
 
-        <div style="
-            width:70px;
-            height:3px;
-            background:#461D7C;
-            margin:14px auto 0 auto;
-            border-radius:10px;
-            opacity:0.8;
-        "></div>
-    </div>
+      <!-- Intro -->
+      <div class="jn-hero">
+        <h1>Join the Zhang Lab</h1>
+        <div class="jn-rule"></div>
+      </div>
 
-    <!-- CONTENT ROW -->
-    <div style="
-        max-width:1100px;
-        margin:0 auto;
-        display:flex;
-        gap:30px;
-        flex-wrap:wrap;
-        align-items:stretch;
-    ">
-
-        <!-- INFO CARD (FULL BORDER) -->
-        <div style="
-            flex:1;
-            min-width:320px;
-            padding:30px;
-            background:#ffffff;
-            border:2px solid #461D7C;
-            border-radius:18px;
-            box-shadow:0 8px 22px rgba(0,0,0,0.06);
-        ">
-            <p style="font-size:17px; line-height:1.7; color:#444;">
-                The Zhang Lab in the Department of Biological Sciences at Louisiana State University is recruiting motivated postdoctoral researchers, graduate students, and undergraduate researchers interested in microbiome biology, aging, host–microbe interactions, environmental health, and systems biology using the model organism <em>Caenorhabditis elegans</em>.
-            </p>
-
-            <p style="font-size:17px; line-height:1.7; color:#444;">
-                Our research combines genetics, microbiology, imaging, multi-omics, computational analysis, and machine learning to understand how microbes and environmental factors shape host physiology, lifespan, and stress responses.
-            </p>
+      <div class="jn-intro-row">
+        <div class="jn-intro-card">
+          <p>
+            The Zhang Lab in the Department of Biological Sciences at Louisiana State University is recruiting motivated postdoctoral researchers, graduate students, and undergraduate researchers interested in microbiome biology, aging, host–microbe interactions, environmental health, and systems biology using the model organism <em>Caenorhabditis elegans</em>.
+          </p>
+          <p>
+            Our research combines genetics, microbiology, imaging, multi-omics, computational analysis, and machine learning to understand how microbes and environmental factors shape host physiology, lifespan, and stress responses.
+          </p>
         </div>
 
-        <!-- IMAGE CARD (FULL BORDER, CLEAN IMAGE) -->
-        <div style="
-            flex:1;
-            min-width:320px;
-            padding:0;
-            background:#ffffff;
-            border:2px solid #461D7C;
-            border-radius:18px;
-            box-shadow:0 8px 22px rgba(0,0,0,0.06);
-            display:flex;
-            justify-content:center;
-            align-items:center;
-        ">
-            <img src="group.jpg" alt="Zhang Lab Group" style="
-                width:100%;
-                height:100%;
-                max-height:420px;
-                object-fit:cover;
-                border-radius:18px;
-                display:block;
-            ">
+        <div class="jn-intro-img">
+          <img src="group.jpg" alt="Zhang Lab Group">
         </div>
+      </div>
+
+      <!-- Undergraduate Researchers (moved first) -->
+      <article class="jn-card">
+        <h2>Undergraduate Researchers</h2>
+
+        <p>
+          We welcome enthusiastic undergraduate students interested in gaining research experience in molecular biology, microbiology, microscopy, and computational biology.
+        </p>
+
+        <p><strong>Undergraduate researchers may participate in:</strong></p>
+
+        <ul>
+          <li>Worm maintenance and experimental assays</li>
+          <li>Microbial culturing</li>
+          <li>Imaging and fluorescence microscopy</li>
+          <li>Data analysis and visualization</li>
+          <li>Independent or honors research projects</li>
+        </ul>
+
+        <p>
+          No prior research experience is required. We value curiosity, reliability, motivation, and willingness to learn.
+        </p>
+
+        <p>
+          Please take a moment to complete the Google form provided below. After that, we can schedule a meeting to discuss potential research opportunities.
+        </p>
+
+        <div class="jn-form-button-wrap">
+          <a href="https://forms.gle/wa1Svqu26B3naUxr5" target="_blank" class="jn-form-button">
+            Undergraduate Research Form
+          </a>
+        </div>
+      </article>
+
+      <!-- Graduate Students + Postdoctoral Researchers -->
+      <div class="jn-grid">
+
+        <article class="jn-card">
+          <h2>Graduate Students</h2>
+
+          <p>
+            Graduate students interested in microbiome research, aging, environmental health, or computational biology are encouraged to apply through the LSU graduate program in Biological Sciences.
+          </p>
+
+          <p><strong>Graduate students in the lab receive training in:</strong></p>
+
+          <ul>
+            <li>Experimental design</li>
+            <li>Genetics and microbiology</li>
+            <li>Microscopy and image analysis</li>
+            <li>High-throughput assays</li>
+            <li>Multi-omics approaches</li>
+            <li>Data analysis and scientific communication</li>
+          </ul>
+
+          <p>
+            Students will have opportunities to collaborate across disciplines and participate in conferences, workshops, and professional development activities.
+          </p>
+        </article>
+
+        <article class="jn-card">
+          <h2>Postdoctoral Researchers</h2>
+
+          <p>
+            We are seeking highly motivated postdoctoral researchers with backgrounds in one or more of the following areas:
+          </p>
+
+          <ul>
+            <li>Microbiology</li>
+            <li>Molecular biology</li>
+            <li>Genetics</li>
+            <li>Aging biology</li>
+            <li>Bioinformatics/computational biology</li>
+            <li>Imaging and quantitative analysis</li>
+            <li>Host–microbe interactions</li>
+          </ul>
+
+          <p>
+            Postdoctoral researchers will lead independent and collaborative projects, develop mechanistic studies, mentor students, and contribute to manuscript and grant preparation. Experience with <em>C. elegans</em>, microbiome research, RNA-seq analysis, microscopy, or microbial genetics is preferred but not required.
+          </p>
+
+          <p><strong>Competitive candidates should demonstrate:</strong></p>
+
+          <ul>
+            <li>Strong publication record</li>
+            <li>Excellent communication skills</li>
+            <li>Ability to work independently and collaboratively</li>
+            <li>Interest in interdisciplinary research</li>
+          </ul>
+
+          <p><strong>Interested applicants should email:</strong></p>
+
+          <ul>
+            <li>A brief statement of research interests</li>
+            <li>CV or résumé</li>
+            <li>Unofficial transcript (students)</li>
+            <li>Contact information for references</li>
+          </ul>
+        </article>
+
+      </div>
 
     </div>
-</section>
-  <!-- Postdoctoral Researchers -->
-  <div class="join-grid">
-  <article class="card">
-    <h2>Postdoctoral Researchers</h2>
+  </main>
 
-    <p>
-      We are seeking highly motivated postdoctoral researchers with backgrounds in one or more of the following areas:
-    </p>
+  <footer class="site-footer">
+    Zhang Lab © 2026 · Caenorhabditis elegans Research
+  </footer>
 
-    <ul>
-      <li>Microbiology</li>
-      <li>Molecular biology</li>
-      <li>Genetics</li>
-      <li>Aging biology</li>
-      <li>Bioinformatics/computational biology</li>
-      <li>Imaging and quantitative analysis</li>
-      <li>Host–microbe interactions</li>
-    </ul>
+  <style>
+    .site-footer {
+      text-align: center;
+      padding: 28px 20px;
+      margin-top: 40px;
+      border-top: 2px solid rgba(70, 29, 124, 0.2);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: #555;
+      background: #faf8fb;
+    }
+  </style>
 
-    <p>
-      Postdoctoral researchers will lead independent and collaborative projects, develop mechanistic studies, mentor students, and contribute to manuscript and grant preparation. Experience with <em>C. elegans</em>, microbiome research, RNA-seq analysis, microscopy, or microbial genetics is preferred but not required.
-    </p>
-
-    <p><strong>Competitive candidates should demonstrate:</strong></p>
-
-    <ul>
-      <li>Strong publication record</li>
-      <li>Excellent communication skills</li>
-      <li>Ability to work independently and collaboratively</li>
-      <li>Interest in interdisciplinary research</li>
-    </ul>
-
-    <p><strong>Interested applicants should email:</strong></p>
-
-    <ul>
-      <li>A brief statement of research interests</li>
-      <li>CV or résumé</li>
-      <li>Unofficial transcript (students)</li>
-      <li>Contact information for references</li>
-    </ul>
-  </article>
-
-
-  <!-- Graduate Students -->
-  <article class="card">
-    <h2>Graduate Students</h2>
-
-    <p>
-      Graduate students interested in microbiome research, aging, environmental health, or computational biology are encouraged to apply through the LSU graduate program in Biological Sciences.
-    </p>
-
-    <p><strong>Graduate students in the lab receive training in:</strong></p>
-
-    <ul>
-      <li>Experimental design</li>
-      <li>Genetics and microbiology</li>
-      <li>Microscopy and image analysis</li>
-      <li>High-throughput assays</li>
-      <li>Multi-omics approaches</li>
-      <li>Data analysis and scientific communication</li>
-    </ul>
-
-    <p>
-      Students will have opportunities to collaborate across disciplines and participate in conferences, workshops, and professional development activities.
-    </p>
-  </article>
-  </article>
-  </div>
-
-  <!-- Undergraduate Researchers -->
-  <article class="card">
-    <h2>Undergraduate Researchers</h2>
-
-    <p>
-      We welcome enthusiastic undergraduate students interested in gaining research experience in molecular biology, microbiology, microscopy, and computational biology.
-    </p>
-
-    <p><strong>Undergraduate researchers may participate in:</strong></p>
-
-    <ul>
-      <li>Worm maintenance and experimental assays</li>
-      <li>Microbial culturing</li>
-      <li>Imaging and fluorescence microscopy</li>
-      <li>Data analysis and visualization</li>
-      <li>Independent or honors research projects</li>
-    </ul>
-
-    <p>
-      No prior research experience is required. We value curiosity, reliability, motivation, and willingness to learn.
-    </p>
-
-   <p>
-  Please take a moment to complete the Google form provided below. After that, we can schedule a meeting to discuss potential research opportunities.
-</p>
-
-<div style="text-align:center; margin-top:20px;">
-  <a href="https://forms.gle/wa1Svqu26B3naUxr5" target="_blank" class="scholar-button">
-    Undergraduate Research Form
-  </a>
-</div>
-
-<style>
-.scholar-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #6A0DAD; /* light purple */
-  color: white;
-  text-decoration: none;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: 500;
-  border: 2px solid #461D7C;
-  transition: all 0.3s ease;
-}
-
-/* Hover effect */
-.scholar-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(70, 29, 124, 0.25);
-  background-color: #461D7C; /* dark LSU purple */
-  color: white;
-}
-</style>
-
-</main>
-    
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".site-nav");
-
-  if (toggle && nav) {
-
-    toggle.addEventListener("click", function () {
-      nav.classList.toggle("show");
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector(".nav-toggle");
+      const nav = document.querySelector(".site-nav");
+      if (toggle && nav) {
+        toggle.addEventListener("click", function () {
+          nav.classList.toggle("show");
+        });
+      }
     });
-
-  }
-
-});
-</script>
+  </script>
 </body>
 </html>
-</div> <!-- closes page-content -->
