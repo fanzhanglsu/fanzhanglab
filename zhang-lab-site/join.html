@@ -40,6 +40,12 @@
       height: 100%;
       object-fit: cover;
       z-index: 0;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+
+    .jn-hero img.jn-slide-active {
+      opacity: 1;
     }
 
     .jn-hero::after {
@@ -263,8 +269,7 @@
 
   <main class="join-page">
 
-    <section class="jn-hero">
-      <img src="group.jpg" alt="Zhang Lab Group">
+    <section class="jn-hero" id="jnHero">
       <div class="jn-hero-content">
         <h1>Join the Zhang Lab</h1>
         <p>
@@ -312,6 +317,7 @@
         </p>
 
         <div class="jn-form-cta">
+          <p>Please complete the application form below:</p>
           <a href="https://forms.gle/wa1Svqu26B3naUxr5" target="_blank" class="jn-form-button">
             Undergraduate Research Form
           </a>
@@ -423,6 +429,48 @@
         });
       }
     });
+  </script>
+
+  <script>
+    /* =====================================================
+       HERO SLIDESHOW
+       Add or remove filenames here as you add photos to the
+       GitHub repo. They must live in the same folder as this
+       page (same place "group.jpg" currently lives).
+    ===================================================== */
+    const heroSlides = [
+      "group.jpg"
+      // "group2.jpg",
+      // "group3.jpg",
+    ];
+
+    const heroSlideDuration = 5000; // ms each image stays on screen
+
+    function initHeroSlideshow() {
+      const hero = document.getElementById("jnHero");
+      if (!hero || heroSlides.length === 0) return;
+
+      heroSlides.forEach((src, i) => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = "Zhang Lab Group";
+        if (i === 0) img.classList.add("jn-slide-active");
+        hero.prepend(img);
+      });
+
+      if (heroSlides.length < 2) return;
+
+      const slideEls = Array.from(hero.querySelectorAll("img"));
+      let current = 0;
+
+      setInterval(() => {
+        slideEls[current].classList.remove("jn-slide-active");
+        current = (current + 1) % slideEls.length;
+        slideEls[current].classList.add("jn-slide-active");
+      }, heroSlideDuration);
+    }
+
+    document.addEventListener("DOMContentLoaded", initHeroSlideshow);
   </script>
 
   <script>
