@@ -80,6 +80,68 @@
       max-width: 700px;
     }
 
+    /* ---------- SLIDESHOW CONTROLS ---------- */
+    .jn-slide-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 3;
+      background: rgba(255,255,255,0.18);
+      border: none;
+      color: #ffffff;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      transition: background 0.2s ease;
+    }
+
+    .jn-slide-arrow:hover,
+    .jn-slide-arrow:focus-visible {
+      background: rgba(255,255,255,0.32);
+    }
+
+    .jn-slide-arrow.jn-prev { left: 20px; }
+    .jn-slide-arrow.jn-next { right: 20px; }
+
+    .jn-slide-dots {
+      position: absolute;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      gap: 10px;
+    }
+
+    .jn-slide-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.45);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .jn-slide-dot.jn-slide-dot-active {
+      background: #ffffff;
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 640px) {
+      .jn-slide-arrow { width: 38px; height: 38px; font-size: 1.1rem; }
+      .jn-slide-arrow.jn-prev { left: 10px; }
+      .jn-slide-arrow.jn-next { right: 10px; }
+    }
+
     /* ---------- ROLE NAV ---------- */
     .jn-role-nav {
       position: sticky;
@@ -317,7 +379,7 @@
         </p>
 
         <div class="jn-form-cta">
-          <p>Please complete the application form below:</p>
+          <p>Please complete the application form below.</p>
           <a href="https://forms.gle/wa1Svqu26B3naUxr5" target="_blank" class="jn-form-button">
             Undergraduate Research Form
           </a>
@@ -439,9 +501,10 @@
        page (same place "group.jpg" currently lives).
     ===================================================== */
     const heroSlides = [
-      "group.jpg"
-      // "group2.jpg",
-      // "group3.jpg",
+      "group.jpg",
+      "out.png",
+      "photo.jpg",
+      "outs.png"
     ];
 
     const heroSlideDuration = 5000; // ms each image stays on screen
@@ -462,12 +525,66 @@
 
       const slideEls = Array.from(hero.querySelectorAll("img"));
       let current = 0;
+      let timer;
 
-      setInterval(() => {
+      function goTo(index) {
         slideEls[current].classList.remove("jn-slide-active");
-        current = (current + 1) % slideEls.length;
+        current = (index + slideEls.length) % slideEls.length;
         slideEls[current].classList.add("jn-slide-active");
-      }, heroSlideDuration);
+
+        const dots = hero.querySelectorAll(".jn-slide-dot");
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("jn-slide-dot-active", i === current);
+        });
+      }
+
+      function startAutoplay() {
+        timer = setInterval(() => goTo(current + 1), heroSlideDuration);
+      }
+
+      function restartAutoplay() {
+        clearInterval(timer);
+        startAutoplay();
+      }
+
+      // Prev / next arrow buttons
+      const prevBtn = document.createElement("button");
+      prevBtn.className = "jn-slide-arrow jn-prev";
+      prevBtn.setAttribute("aria-label", "Previous photo");
+      prevBtn.innerHTML = "&#8249;";
+      prevBtn.addEventListener("click", () => {
+        goTo(current - 1);
+        restartAutoplay();
+      });
+
+      const nextBtn = document.createElement("button");
+      nextBtn.className = "jn-slide-arrow jn-next";
+      nextBtn.setAttribute("aria-label", "Next photo");
+      nextBtn.innerHTML = "&#8250;";
+      nextBtn.addEventListener("click", () => {
+        goTo(current + 1);
+        restartAutoplay();
+      });
+
+      hero.appendChild(prevBtn);
+      hero.appendChild(nextBtn);
+
+      // Dot indicators
+      const dotsWrap = document.createElement("div");
+      dotsWrap.className = "jn-slide-dots";
+      slideEls.forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.className = "jn-slide-dot" + (i === 0 ? " jn-slide-dot-active" : "");
+        dot.setAttribute("aria-label", "Go to photo " + (i + 1));
+        dot.addEventListener("click", () => {
+          goTo(i);
+          restartAutoplay();
+        });
+        dotsWrap.appendChild(dot);
+      });
+      hero.appendChild(dotsWrap);
+
+      startAutoplay();
     }
 
     document.addEventListener("DOMContentLoaded", initHeroSlideshow);
