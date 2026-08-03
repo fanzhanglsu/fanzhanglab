@@ -27,7 +27,7 @@
     /* ---------- HERO ---------- */
     .jn-hero {
       position: relative;
-      min-height: 60vh;
+      min-height: 42vh;
       display: flex;
       align-items: flex-end;
       overflow: hidden;
@@ -310,7 +310,7 @@
     }
 
     @media (max-width: 640px) {
-      .jn-hero { min-height: 44vh; }
+      .jn-hero { min-height: 34vh; }
     }
   </style>
 </head>
@@ -518,7 +518,7 @@
         img.src = src;
         img.alt = "Zhang Lab Group";
         if (src === "out.png" || src === "outs.png") {
-          img.style.objectPosition = "center 100%";
+          img.style.objectPosition = "center 55%";
         }
         if (i === 0) img.classList.add("jn-slide-active");
         hero.prepend(img);
