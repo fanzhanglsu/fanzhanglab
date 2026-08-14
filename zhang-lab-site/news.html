@@ -202,21 +202,12 @@
       box-shadow: 0 8px 20px rgba(28, 39, 51, 0.10);
       object-fit: cover;
     }
- .nw-figure-horizontal {
+.nw-figure-single img {
   width: 100%;
-  margin: 24px 0;
-  display: flex;
-  justify-content: center;
-}
-.nw-figure-horizontal img {
-  width: 100%;
-  max-width: 400px;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  object-position: center 30%;
-  border-radius: 12px;
-  display: block;
+  max-width: 600px;   /* was 350px */
+  border-radius: 14px;
   box-shadow: 0 8px 20px rgba(28, 39, 51, 0.10);
+  object-fit: cover;
 }
     /* ---------- MOBILE ---------- */
     @media (max-width: 768px) {
@@ -302,7 +293,7 @@
   <li>Fan presented our lab research at the <em>10th Beneficial Microbes Meeting</em> in Madison, Wisconsin.</li>
   <li>Victoria attended a Cold Spring Harbor Laboratory (CSHL) <em>C. elegans Genetic and Genomic</em> course in Suzhou, China, gaining advanced training and connecting with researchers from around the world.</li>
 </ul>
-         <figure class="nw-figure-horizontal">
+        <figure class="nw-figure-single">
   <img src="suzhou.JPG" alt="Victoria at the C. elegans Genetic and Genomic course in Suzhou, China">
 </figure>
 
