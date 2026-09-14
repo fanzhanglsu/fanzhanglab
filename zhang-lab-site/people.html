@@ -199,6 +199,20 @@
     @media (prefers-reduced-motion: reduce) {
       .person-card { transition: none; }
     }
+        .person-email {
+      margin-top: 14px !important;
+    }
+
+    .person-email a {
+      color: var(--purple);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .person-email a:hover,
+    .person-email a:focus-visible {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -313,7 +327,33 @@
             </p>
           </div>
         </div>
+        <div class="person-card">
+          <img src="lee.png" alt="Minjoon Chris Lee">
+          <div class="person-info">
+            <h3>Minjoon Chris Lee</h3>
+            <div class="person-role">Undergraduate Research Assistant</div>
+            <p>
+              Hi! I am currently a junior majoring in Biological Sciences with a growing interest in biological research and its applications to medicine. In the lab, I assist with research experiments involving <i>Caenorhabditis elegans</i> and perform various lab techniques. Aside from the lab, I enjoy playing the piano, learning new languages, and traveling.
+            </p>
+            <p class="person-email">
+              <a href="mailto:mlee175@lsu.edu">mlee175@lsu.edu</a>
+            </p>
+          </div>
+        </div>
 
+        <div class="person-card">
+          <img src="coleman.png" alt="Jamayla Coleman">
+          <div class="person-info">
+            <h3>Jamayla Coleman</h3>
+            <div class="person-role">Undergraduate Research Assistant</div>
+            <p>
+              Howdy! I am a senior majoring in Biological Sciences with a minor in LASAL, an honors track through the Ogden Honors College. This year, it is my goal to pursue and defend my thesis. While I will be helping with various laboratory tasks, my project will specifically surround how pollutants affect the health of <i>Caenorhabditis elegans</i>.
+            </p>
+            <p class="person-email">
+              <a href="mailto:Jcol158@lsu.edu">Jcol158@lsu.edu</a>
+            </p>
+          </div>
+        </div>
       </div>
 
       <h2 class="section-title">Alumni</h2>
